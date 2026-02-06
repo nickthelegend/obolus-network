@@ -10,6 +10,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Obolus | Cardano Fintech Infrastructure",
   description: "Non-custodial payment and credit infrastructure on Cardano",
+  icons: {
+    icon: "/obolus.png",
+    shortcut: "/obolus.png",
+    apple: "/obolus.png",
+  },
 };
 
 export default function RootLayout({
