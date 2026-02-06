@@ -100,7 +100,7 @@ export default function Home() {
             <h2 className="text-lg font-bold tracking-tight">Obolus</h2>
           </motion.div>
           <nav className="hidden md:flex items-center gap-8">
-            {["About", "Dashboard", "Docs", "Privacy"].map((item, i) => (
+            {["About", "Docs", "Privacy"].map((item, i) => (
               <motion.div
                 key={item}
                 initial={{ opacity: 0, y: -10 }}
