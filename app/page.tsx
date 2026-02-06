@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -10,15 +12,16 @@ const fadeInUp = {
   transition: { duration: 0.6 }
 };
 
-const Logo = () => (
-  <svg fill="none" height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg" className="text-primary">
-    <circle cx="16" cy="16" r="14" stroke="currentColor" strokeWidth="2.5" />
-    <circle cx="16" cy="16" r="7" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 2" />
-    <path d="M16 2L16 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    <path d="M16 26L16 30" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    <path d="M30 16L26 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    <path d="M6 16L2 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-  </svg>
+const Logo = ({ className = "" }: { className?: string }) => (
+  <div className={`relative w-8 h-8 ${className}`}>
+    <Image
+      src="/obolus.png"
+      alt="Obolus Logo"
+      fill
+      className="object-contain"
+      priority
+    />
+  </div>
 );
 
 export default function Home() {
@@ -98,16 +101,19 @@ export default function Home() {
           </motion.div>
           <nav className="hidden md:flex items-center gap-8">
             {["About", "Dashboard", "Docs", "Privacy"].map((item, i) => (
-              <motion.a
+              <motion.div
                 key={item}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * i }}
-                className="text-xs font-medium hover:text-primary transition-colors text-slate-400"
-                href={item === "About" ? "#about" : "#"}
               >
-                {item}
-              </motion.a>
+                <Link
+                  className="text-xs font-medium hover:text-primary transition-colors text-slate-400"
+                  href={`/${item.toLowerCase().replace(" ", "")}`}
+                >
+                  {item}
+                </Link>
+              </motion.div>
             ))}
           </nav>
           <motion.button
@@ -344,11 +350,11 @@ export default function Home() {
               The definitive fintech layer for the Cardano blockchain. Built on Haskell and Plutus.
             </p>
             <div className="flex gap-5">
-              {["alternate_email", "share", "code"].map(icon => (
-                <a key={icon} className="text-slate-500 hover:text-primary transition-colors" href="#">
-                  <span className="material-symbols-outlined text-2xl">{icon}</span>
-                </a>
-              ))}
+              <a className="text-slate-500 hover:text-primary transition-colors" href="https://x.com/ObolusNetwork" target="_blank" rel="noopener noreferrer">
+                <span className="material-symbols-outlined text-2xl">share</span>
+              </a>
+              <a className="text-slate-500 hover:text-primary transition-colors" href="#"><span className="material-symbols-outlined text-2xl">alternate_email</span></a>
+              <a className="text-slate-500 hover:text-primary transition-colors" href="#"><span className="material-symbols-outlined text-2xl">code</span></a>
             </div>
           </div>
           <div className="flex flex-col gap-4">
@@ -366,7 +372,9 @@ export default function Home() {
           <div className="flex flex-col gap-4">
             <h4 className="font-bold text-[10px] tracking-[0.2em] uppercase text-slate-300">Resources</h4>
             <div className="flex flex-col gap-2">
-              {["Docs", "GitHub", "Legal"].map(it => <a key={it} className="text-slate-500 hover:text-primary text-xs" href="#">{it}</a>)}
+              <a className="text-slate-500 hover:text-primary text-xs" href="/docs">Docs</a>
+              <a className="text-slate-500 hover:text-primary text-xs" href="https://github.com/obolus-network" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a className="text-slate-500 hover:text-primary text-xs" href="/privacy">Legal</a>
             </div>
           </div>
         </div>
