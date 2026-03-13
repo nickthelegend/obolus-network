@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Obolus | Cardano Fintech Infrastructure",
-  description: "Non-custodial payment and credit infrastructure on Cardano",
+  title: "Obolus | Monad Fintech Infrastructure",
+  description: "Non-custodial payment and credit infrastructure on Monad",
   icons: {
     icon: "/obolus.png",
     shortcut: "/obolus.png",

@@ -45,7 +45,7 @@ export default function About() {
                         Building the <span className="text-primary">Future</span> of <br /> Decentralized Finance.
                     </h1>
                     <p className="text-slate-400 text-lg lg:text-xl leading-relaxed max-w-3xl">
-                        Obolus is an institutional-grade fintech layer built on the Cardano blockchain.
+                        Obolus is an institutional-grade fintech layer built on the Monad blockchain.
                         We are dedicated to creating secure, non-custodial payment and credit infrastructure
                         that bridges the gap between traditional commerce and the decentralized world.
                     </p>
@@ -62,8 +62,8 @@ export default function About() {
                         <div className="p-8 rounded-2xl bg-card-dark border border-white/5">
                             <h4 className="font-bold text-primary mb-2">Institutional Grade</h4>
                             <p className="text-xs text-slate-500">
-                                We use Haskell and Plutus to ensure our smart contracts meet the highest
-                                security standards for institutional adoption.
+                                We use Solidity and optimized EVM byte-code to ensure our smart contracts meet the highest
+                                security standards for institutional adoption on Monad.
                             </p>
                         </div>
                     </motion.div>
@@ -72,7 +72,7 @@ export default function About() {
                         <h2 className="text-2xl lg:text-4xl font-bold mb-6">The Team</h2>
                         <p className="text-slate-400 leading-relaxed">
                             We are a group of veteran software engineers, financial researchers, and
-                            blockchain pioneers. With deep expertise in Cardano development, we were
+                            blockchain pioneers. With deep expertise in high-performance EVM development, we were
                             recognized as winners of the Cardano Emurgo Build 2023 for our technical
                             excellence in DeFi infrastructure.
                         </p>
@@ -103,7 +103,7 @@ export default function About() {
                         <span className="font-bold">Obolus</span>
                     </div>
                     <p className="text-[10px] text-slate-500 uppercase tracking-widest">
-                        © 2024 Obolus Finance. Built on Cardano.
+                        © 2024 Obolus Finance. Built on Monad.
                     </p>
                 </div>
             </footer>

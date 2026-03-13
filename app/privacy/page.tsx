@@ -56,7 +56,7 @@ export default function Privacy() {
                         <section>
                             <h3 className="text-xl font-bold text-white mb-4">2. Blockchain Data</h3>
                             <p>
-                                Transactions made using Obolus protocols are recorded on the Cardano blockchain.
+                                Transactions made using Obolus protocols are recorded on the Monad blockchain.
                                 This data is public by design and includes wallet addresses and transaction
                                 amounts. We do not have control over this data.
                             </p>

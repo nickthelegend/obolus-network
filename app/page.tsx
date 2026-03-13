@@ -116,13 +116,14 @@ export default function Home() {
               </motion.div>
             ))}
           </nav>
-          <motion.button
+          <motion.a
+            href="https://app.obolus.network"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             className="bg-primary hover:opacity-90 text-background-dark px-5 py-2 rounded-full text-xs font-bold transition-all"
           >
             Launch App
-          </motion.button>
+          </motion.a>
         </div>
       </header>
 
@@ -160,16 +161,16 @@ export default function Home() {
                   Institutional Grade Rails
                 </motion.span>
                 <h1 className="text-3xl lg:text-6xl font-black leading-tight tracking-tight">
-                  Non-custodial payment and <br className="hidden lg:block" /> credit infrastructure on Cardano
+                  Non-custodial payment and <br className="hidden lg:block" /> credit infrastructure on Monad
                 </h1>
                 <p className="text-slate-400 text-base lg:text-lg leading-relaxed max-w-2xl mx-auto">
                   Obolus bridges the gap between DeFi and commerce with high-performance infrastructure designed for the next generation of financial apps.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
-                <button className="bg-primary hover:scale-105 text-background-dark px-8 py-4 rounded-full text-sm font-bold transition-all shadow-xl shadow-primary/20">
+                <Link href="https://app.obolus.network" className="bg-primary hover:scale-105 text-background-dark px-8 py-4 rounded-full text-sm font-bold transition-all shadow-xl shadow-primary/20 flex items-center justify-center">
                   Get Started
-                </button>
+                </Link>
                 <button className="backdrop-blur-md bg-white/5 border border-white/10 hover:bg-white/10 px-8 py-4 rounded-full text-sm font-bold transition-all text-white">
                   Documentation
                 </button>
@@ -208,7 +209,7 @@ export default function Home() {
               <span className="text-primary font-bold text-xs uppercase tracking-widest">Ecosystem 01</span>
               <h3 className="text-2xl lg:text-4xl font-bold">Payment Gateway</h3>
               <p className="text-slate-400 text-sm lg:text-base leading-relaxed">
-                Native Shopify integration allowing merchants to accept ADA and stablecoins with instant settlement. A seamless bridge for traditional commerce.
+                Native Shopify integration allowing merchants to accept native assets and stablecoins with instant settlement. A seamless bridge for traditional commerce.
               </p>
               <a className="text-primary text-sm font-bold flex items-center gap-2 hover:translate-x-2 transition-transform" href="#">
                 Learn more <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -224,7 +225,7 @@ export default function Home() {
               <span className="text-primary font-bold text-xs uppercase tracking-widest">Ecosystem 02</span>
               <h3 className="text-2xl lg:text-4xl font-bold">BNPL Rails</h3>
               <p className="text-slate-400 text-sm lg:text-base leading-relaxed">
-                Decentralized "Buy Now, Pay Later" infrastructure for cross-border commerce on Cardano. Providing flexible, permissionless credit lines.
+                Decentralized "Buy Now, Pay Later" infrastructure for cross-border commerce on Monad. Providing flexible, permissionless credit lines.
               </p>
               <a className="text-primary text-sm font-bold flex items-center gap-2 hover:translate-x-2 transition-transform" href="#">
                 Explore Rails <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -276,9 +277,9 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20 max-w-[1400px] mx-auto">
             <motion.div {...fadeInUp} className="order-2 lg:order-1 flex flex-col gap-5">
               <span className="text-primary font-bold text-xs uppercase tracking-widest">Ecosystem 04</span>
-              <h3 className="text-2xl lg:text-4xl font-bold">IoT Pay (Hydra)</h3>
+              <h3 className="text-2xl lg:text-4xl font-bold">IoT Pay (Monad Speed)</h3>
               <p className="text-slate-400 text-sm lg:text-base leading-relaxed">
-                Harnessing Hydra Pay for ultra-high throughput micro-payments and machine economies. Driving real-time automation.
+                Harnessing Monad's parallel execution for ultra-high throughput micro-payments and machine economies. Driving real-time automation.
               </p>
               <a className="text-primary text-sm font-bold flex items-center gap-2 hover:translate-x-2 transition-transform" href="#">
                 Read Specs <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -305,7 +306,7 @@ export default function Home() {
               <motion.div {...fadeInUp} className="lg:col-span-1 flex flex-col justify-center">
                 <h2 className="text-2xl lg:text-4xl font-black leading-tight mb-6">Engineered for absolute trust</h2>
                 <p className="text-slate-400 text-sm lg:text-base leading-relaxed mb-8">
-                  We are a mission-driven team of Haskell and Plutus pioneers building robust financial rails in the Cardano ecosystem.
+                  We are a mission-driven team of Solidity and EVM pioneers building robust financial rails in the Monad ecosystem.
                 </p>
                 <div className="flex gap-4 items-center p-5 rounded-xl bg-primary/5 border border-primary/20 shadow-xl">
                   <span className="material-symbols-outlined text-primary text-3xl">workspace_premium</span>
@@ -317,7 +318,7 @@ export default function Home() {
               </motion.div>
               <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {[
-                  { icon: "terminal", title: "Engineering", desc: "Expertise in Plutus and Aiken." },
+                  { icon: "terminal", title: "Engineering", desc: "Expertise in Solidity and EVM." },
                   { icon: "security", title: "Verification", desc: "Rigorous institutional-grade testing." },
                   { icon: "public", title: "Mission", desc: "Tools for the unbanked globally." },
                   { icon: "hub", title: "Standards", desc: "Open-source primitives for the community." }
@@ -347,7 +348,7 @@ export default function Home() {
               <h2 className="text-xl font-bold">Obolus</h2>
             </div>
             <p className="text-slate-400 text-sm mb-6 leading-relaxed max-w-xs">
-              The definitive fintech layer for the Cardano blockchain. Built on Haskell and Plutus.
+              The definitive fintech layer for the Monad blockchain. Built for extreme performance.
             </p>
             <div className="flex gap-5">
               <a className="text-slate-500 hover:text-primary transition-colors" href="https://x.com/ObolusNetwork" target="_blank" rel="noopener noreferrer">
@@ -379,7 +380,7 @@ export default function Home() {
           </div>
         </div>
         <div className="max-w-[1400px] mx-auto w-full mt-20 pt-10 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] text-slate-500">
-          <p>© 2024 Obolus Finance. Built on Cardano. Engineered for the future.</p>
+          <p>© 2024 Obolus Finance. Built on Monad. Engineered for the future.</p>
           <p className="uppercase tracking-widest">Designed for global inclusion.</p>
         </div>
       </footer>
