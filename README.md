@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Obolus Landing Page 🌌
 
-## Getting Started
+Welcome to the **Obolus Landing Page** repository! This is the public-facing promotional website for **Obolus**, a decentralized Cross-Chain Buy Now Pay Later (BNPL) protocol. 
 
-First, run the development server:
+The landing page introduces the protocol to users and merchants, explaining how they can leverage assets across multiple chains as collateral for instant BNPL payments.
 
+## 🚀 Tech Stack
+This project is built with a modern frontend stack to ensure a fast, responsive, and beautiful user experience:
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Typography**: [Geist Font](https://vercel.com/font)
+
+## 🛠️ Getting Started
+
+### Prerequisites
+Make sure you have Node.js installed. We recommend using `npm` or `pnpm` for managing dependencies.
+
+### Installation & Running Locally
+
+1. Install the dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Start the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the landing page.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Project Structure
+- `app/`: Next.js App Router files, including the main `page.tsx`.
+- `public/`: Static assets like images and icons.
 
-## Learn More
+## 🌍 About Obolus
+Obolus enables decentralized credit by utilizing Chainlink CCIP to pass messages between Satellite Chains (where collateral is locked) and the Master Chain (where credit and debt are managed).
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For the actual decentralized application and user dashboard, please see the [`obolus-network`](../obolus-network) project within this workspace.
