@@ -51,29 +51,29 @@ export default function Home() {
             className="flex flex-col gap-8"
           >
             <h1 className="text-5xl lg:text-7xl font-black leading-[0.9] tracking-tight uppercase">
-              The Best<br />Yield in DeFi,<br />Period.
+              Cross-Chain<br />Buy Now,<br />Pay Later.
             </h1>
             <p className="text-sm lg:text-base font-medium max-w-md leading-relaxed">
-              Set it and forget it. Obolus is your secure multi-chain yield optimizer, continuously rebalancing to deliver the best risk-adjusted yield in DeFi.
+              Leverage collateral on any chain to instantly access credit everywhere. Obolus empowers your purchases across the multi-chain ecosystem.
             </p>
             <div>
               <Link 
                 href="https://app.obolus.network" 
                 className="inline-block bg-black text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-full hover:bg-neutral-800 hover:scale-105 transition-all"
               >
-                Start Earning
+                Get Credit
               </Link>
             </div>
             
             <div className="flex items-center gap-12 mt-8 pt-8 border-t border-black/10">
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-widest mb-1">Max APR</p>
-                <div className="text-3xl font-black">16.94%</div>
+                <p className="text-[10px] font-bold uppercase tracking-widest mb-1">Supported Chains</p>
+                <div className="text-3xl font-black">4+</div>
               </div>
               <div className="w-px h-12 bg-black/10"></div>
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-widest mb-1">Total Deposits</p>
-                <div className="text-3xl font-black">$77.25m</div>
+                <p className="text-[10px] font-bold uppercase tracking-widest mb-1">Payment Speed</p>
+                <div className="text-3xl font-black">&lt;2s</div>
               </div>
             </div>
           </motion.div>
@@ -89,12 +89,12 @@ export default function Home() {
               <div className="w-8 h-8 rounded-full bg-[#ccff00] flex items-center justify-center pt-1 text-black font-black text-xl leading-none">
                 ♦
               </div>
-              <span className="text-white font-bold text-sm tracking-wide">oboETH</span>
+              <span className="text-white font-bold text-sm tracking-wide">oblETH Collateral</span>
             </div>
             
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-[#1a1a1a] rounded-xl p-4 col-span-1 h-32 flex flex-col justify-between">
-                <span className="text-[#ccff00] text-[8px] font-bold uppercase tracking-widest">Last 7 Day APY</span>
+                <span className="text-[#ccff00] text-[8px] font-bold uppercase tracking-widest">Credit Utilization</span>
                 <div className="flex items-end gap-1 h-16">
                   {/* Mock Bar Chart */}
                   {[4,5,6,6,7,8,8,9,9,10,11,12,13,15,18,22].map((h, i) => (
@@ -105,17 +105,17 @@ export default function Home() {
               
               <div className="grid grid-rows-2 gap-4 col-span-1">
                  <div className="bg-[#1a1a1a] rounded-xl p-4 flex flex-col justify-center">
-                    <span className="text-[#ccff00] text-[8px] font-bold uppercase tracking-widest mb-1">Deposit Fee</span>
-                    <span className="text-white font-bold text-xl">0%</span>
+                    <span className="text-[#ccff00] text-[8px] font-bold uppercase tracking-widest mb-1">Interest Rate</span>
+                    <span className="text-white font-bold text-xl">4.2%</span>
                  </div>
                  <div className="bg-[#1a1a1a] rounded-xl p-4 flex flex-col justify-center">
-                    <span className="text-[#ccff00] text-[8px] font-bold uppercase tracking-widest mb-1">Vault Address</span>
+                    <span className="text-[#ccff00] text-[8px] font-bold uppercase tracking-widest mb-1">Credit Manager</span>
                     <span className="text-white font-medium text-xs opacity-80 truncate">0x73e...eDd9</span>
                  </div>
               </div>
               
               <div className="bg-[#1a1a1a] rounded-xl p-4 col-span-1 h-32 flex flex-col">
-                <span className="text-[#ccff00] text-[8px] font-bold uppercase tracking-widest mb-auto">TVL</span>
+                <span className="text-[#ccff00] text-[8px] font-bold uppercase tracking-widest mb-auto">Total Debt</span>
                 {/* Mock Line Chart SVG Curve */}
                 <svg viewBox="0 0 100 50" className="w-full h-16 stroke-[#ccff00] fill-none" preserveAspectRatio="none">
                   <path d="M0,45 C20,40 40,40 60,30 C80,20 90,10 100,5" strokeWidth="1" />
@@ -123,7 +123,7 @@ export default function Home() {
               </div>
 
               <div className="bg-[#1a1a1a] rounded-xl p-4 col-span-1 flex flex-col justify-center">
-                <span className="text-[#ccff00] text-[8px] font-bold uppercase tracking-widest mb-2">Deposit Cap</span>
+                <span className="text-[#ccff00] text-[8px] font-bold uppercase tracking-widest mb-2">Credit Limit</span>
                 <div className="h-2 w-full bg-[#333] rounded-full flex overflow-hidden">
                    <div className="h-full bg-[#ccff00] w-[60%]"></div>
                    {/* Dotted lines effect over it */}
@@ -141,15 +141,15 @@ export default function Home() {
         
         {/* Partners */}
         <div className="flex flex-wrap justify-center gap-12 lg:gap-24 items-center opacity-60 grayscale pb-10">
-          <span className="font-bold text-2xl tracking-tighter">Morpho</span>
+          <span className="font-bold text-2xl tracking-tighter">Chainlink CCIP</span>
           <span className="font-bold text-2xl tracking-tighter flex items-center gap-2">
-            <div className="w-4 h-4 bg-white rounded-full"></div>PENDLE
+            <div className="w-4 h-4 bg-white rounded-full"></div>Reclaim
           </span>
-          <span className="font-bold text-2xl tracking-tighter">Ethena</span>
+          <span className="font-bold text-2xl tracking-tighter">Avalanche</span>
           <span className="font-bold text-2xl tracking-tighter flex items-center gap-2">
-            <div className="w-3 h-4 bg-white rounded-t-full"></div>LIDO
+            <div className="w-3 h-4 bg-white rounded-t-full"></div>Monad
           </span>
-          <span className="font-bold text-2xl tracking-tighter">AAVE</span>
+          <span className="font-bold text-2xl tracking-tighter">Supabase</span>
         </div>
 
         {/* Introducing Banner */}
@@ -173,7 +173,7 @@ export default function Home() {
             <div className="flex-1 text-center md:text-left">
               <h2 className="text-xl lg:text-3xl font-bold text-white uppercase tracking-tight">
                 <span className="text-[#ccff00]">Introducing Obolus:</span><br/>
-                The Yield Engine For Crypto
+                Unifying Cross-Chain Credit
               </h2>
             </div>
             
@@ -192,17 +192,19 @@ export default function Home() {
           className="bg-[#85A1FF] text-black rounded-2xl p-8 lg:p-10 flex flex-col md:flex-row items-center justify-between gap-8"
         >
           <div className="max-w-xl">
-            <h2 className="text-3xl lg:text-4xl font-black mb-4 tracking-tighter uppercase">Built By Exponential</h2>
+            <h2 className="text-3xl lg:text-4xl font-black mb-4 tracking-tighter uppercase">Powered By Chainlink CCIP</h2>
             <p className="font-medium text-sm leading-relaxed opacity-80">
-              Created by the team behind exponential.fi and powered by its industry-leading risk ratings
+              Secure, reliable cross-chain messaging enables seamless collateral management and credit tracking across the multi-chain ecosystem.
             </p>
           </div>
           <div className="font-black text-xl italic opacity-90 flex flex-col items-center">
-            {/* Mock exponential logo */}
+            {/* Mock chainlink logo */}
             <div className="flex gap-1 mb-1">
-              <div className="w-12 h-6 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-tr-xl rounded-bl-sm transform -skew-x-12"></div>
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
             </div>
-            exponential.fi
+            Chainlink
           </div>
         </motion.section>
 
@@ -215,9 +217,9 @@ export default function Home() {
             className="bg-[#5EF1A0] text-black rounded-3xl p-8 lg:p-12 flex flex-col justify-between overflow-hidden relative min-h-[440px] md:min-h-[600px] md:row-span-2"
           >
             <div className="z-10 max-w-sm mb-12">
-              <h3 className="text-3xl lg:text-5xl font-black uppercase tracking-tight leading-[0.9] mb-4">Multi-Chain<br/>Yield Engine</h3>
+              <h3 className="text-3xl lg:text-5xl font-black uppercase tracking-tight leading-[0.9] mb-4">Any Chain<br/>Collateral</h3>
               <p className="font-medium text-sm lg:text-base opacity-80 leading-relaxed">
-                Obolus tracks the best yield across DeFi protocols and chains so your assets are always in the right place.
+                Deposit your assets into Satellite Vaults on Polygon, Monad, or Base. Obolus securely tracks your collateral via CCIP to unlock global credit.
               </p>
             </div>
             
@@ -239,9 +241,9 @@ export default function Home() {
             className="bg-[#7FF6FF] text-black rounded-3xl p-8 lg:p-12 relative overflow-hidden min-h-[300px]"
           >
             <div className="z-10 max-w-sm mb-8 relative">
-              <h3 className="text-3xl lg:text-4xl font-black uppercase tracking-tight leading-[0.9] mb-4">Risk-Adjusted<br/>Yield</h3>
+              <h3 className="text-3xl lg:text-4xl font-black uppercase tracking-tight leading-[0.9] mb-4">Identity &<br/>Trust</h3>
               <p className="font-medium text-sm opacity-80 leading-relaxed">
-                Algorithms generate optimized yield by balancing risk and reward, powered by Exponential.fi's trusted ratings.
+                Integrated with Reclaim Protocol for Zero-Knowledge KYC and Sybil resistance to ensure robust, secure peer-to-peer credit pools.
               </p>
             </div>
             {/* Graphics mock */}
@@ -262,9 +264,9 @@ export default function Home() {
             className="bg-[#BB8EF6] text-black rounded-3xl p-8 lg:p-12 relative overflow-hidden min-h-[300px]"
           >
             <div className="z-10 max-w-sm mb-8 relative">
-              <h3 className="text-3xl lg:text-4xl font-black uppercase tracking-tight leading-[0.9] mb-4">Continuous<br/>Optimization</h3>
+              <h3 className="text-3xl lg:text-4xl font-black uppercase tracking-tight leading-[0.9] mb-4">One-Click<br/>Checkout</h3>
               <p className="font-medium text-sm opacity-80 leading-relaxed">
-                Obolus continuously reallocates your assets across DeFi chains and protocols to maximize yield. 
+                Seamless merchant integrations allow you to Buy Now and Pay Later with a single signed transaction, no matter where your collateral lives.
               </p>
             </div>
             {/* Graphics mock: overlapping circles */}
@@ -310,10 +312,10 @@ export default function Home() {
 
           <div className="max-w-md text-center lg:text-left z-10">
             <h2 className="text-3xl lg:text-4xl font-black text-[#ccff00] uppercase tracking-tight leading-[0.9] mb-4">
-              Non-custodial &<br/>Community-Driven
+              Decentralized &<br/>Trustless
             </h2>
             <p className="font-medium text-sm lg:text-base opacity-80 leading-relaxed text-[#ccff00]/90">
-              Keep control over your assets. Underlying protocols are selected by the community.
+              Maintain full ownership of your collateral. Smart contracts handle LTV calculations, liquidation, and settlement automatically.
             </p>
           </div>
         </motion.section>
@@ -356,7 +358,7 @@ export default function Home() {
               Build With Obolus
             </h2>
             <p className="font-medium text-sm lg:text-base opacity-80 mb-8 text-[#ccff00]/90">
-              Offer the best DeFi yield instantly to your users, with one seamless integration
+              Integrate Obolus into your dApp or storefront to offer instant Web3 BNPL checkout to your customers.
             </p>
             <div>
               <button className="bg-[#ccff00] text-black font-bold text-xs uppercase tracking-wider px-8 py-3 rounded-full hover:bg-white transition-all">
@@ -372,7 +374,7 @@ export default function Home() {
       <footer className="border-t border-white/5 py-12 px-6 lg:px-20 max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         <Logo />
         <div className="flex gap-4 text-[10px] text-white/40 uppercase tracking-widest font-bold">
-          <span>© 2024 OBOLUS</span>
+          <span>© 2026 OBOLUS</span>
           <Link href="/privacy" className="hover:text-white transition-colors">Privacy Note</Link>
           <Link href="/docs" className="hover:text-white transition-colors">Docs</Link>
         </div>
@@ -380,4 +382,3 @@ export default function Home() {
     </div>
   );
 }
-
