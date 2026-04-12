@@ -51,10 +51,10 @@ export default function Home() {
             className="flex flex-col gap-8"
           >
             <h1 className="text-5xl lg:text-7xl font-black leading-[0.9] tracking-tight uppercase">
-              Cross-Chain<br />Buy Now,<br />Pay Later.
+              Private UAE<br />Salary Rail &<br />Instant Loans.
             </h1>
             <p className="text-sm lg:text-base font-medium max-w-md leading-relaxed">
-              Leverage collateral on any chain to instantly access credit everywhere. Obolus empowers your purchases across the multi-chain ecosystem.
+              Shielded remittances and undercollateralized credit on Solana. Powered by MagicBlock's Private Ephemeral Rollups for ultimate privacy and digital-first compliance.
             </p>
             <div>
               <Link 
@@ -141,15 +141,15 @@ export default function Home() {
         
         {/* Partners */}
         <div className="flex flex-wrap justify-center gap-12 lg:gap-24 items-center opacity-60 grayscale pb-10">
-          <span className="font-bold text-2xl tracking-tighter">Chainlink CCIP</span>
+          <span className="font-bold text-2xl tracking-tighter">MagicBlock PER</span>
           <span className="font-bold text-2xl tracking-tighter flex items-center gap-2">
-            <div className="w-4 h-4 bg-white rounded-full"></div>Reclaim
+            <div className="w-4 h-4 bg-white rounded-full"></div>Solana
           </span>
-          <span className="font-bold text-2xl tracking-tighter">Avalanche</span>
+          <span className="font-bold text-2xl tracking-tighter">Intel TDX</span>
           <span className="font-bold text-2xl tracking-tighter flex items-center gap-2">
-            <div className="w-3 h-4 bg-white rounded-t-full"></div>Monad
+            <div className="w-3 h-4 bg-white rounded-t-full"></div>NeosLegal
           </span>
-          <span className="font-bold text-2xl tracking-tighter">Supabase</span>
+          <span className="font-bold text-2xl tracking-tighter">Colosseum</span>
         </div>
 
         {/* Introducing Banner */}
@@ -173,7 +173,7 @@ export default function Home() {
             <div className="flex-1 text-center md:text-left">
               <h2 className="text-xl lg:text-3xl font-bold text-white uppercase tracking-tight">
                 <span className="text-[#ccff00]">Introducing Obolus:</span><br/>
-                Unifying Cross-Chain Credit
+                Privacy-First Remittance & Credit
               </h2>
             </div>
             
@@ -192,19 +192,19 @@ export default function Home() {
           className="bg-[#85A1FF] text-black rounded-2xl p-8 lg:p-10 flex flex-col md:flex-row items-center justify-between gap-8"
         >
           <div className="max-w-xl">
-            <h2 className="text-3xl lg:text-4xl font-black mb-4 tracking-tighter uppercase">Powered By Chainlink CCIP</h2>
+            <h2 className="text-3xl lg:text-4xl font-black mb-4 tracking-tighter uppercase">Powered By MagicBlock PER</h2>
             <p className="font-medium text-sm leading-relaxed opacity-80">
-              Secure, reliable cross-chain messaging enables seamless collateral management and credit tracking across the multi-chain ecosystem.
+              Private Ephemeral Rollups enable sub-50ms confidential compute, ensuring your salary data and credit scoring stay private while remaining regulator-auditable.
             </p>
           </div>
           <div className="font-black text-xl italic opacity-90 flex flex-col items-center">
-            {/* Mock chainlink logo */}
+            {/* Mock MagicBlock logo */}
             <div className="flex gap-1 mb-1">
               <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white">
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
               </div>
             </div>
-            Chainlink
+            MagicBlock
           </div>
         </motion.section>
 
@@ -217,9 +217,9 @@ export default function Home() {
             className="bg-[#5EF1A0] text-black rounded-3xl p-8 lg:p-12 flex flex-col justify-between overflow-hidden relative min-h-[440px] md:min-h-[600px] md:row-span-2"
           >
             <div className="z-10 max-w-sm mb-12">
-              <h3 className="text-3xl lg:text-5xl font-black uppercase tracking-tight leading-[0.9] mb-4">Any Chain<br/>Collateral</h3>
+              <h3 className="text-3xl lg:text-5xl font-black uppercase tracking-tight leading-[0.9] mb-4">Shielded Salary<br/>Rail</h3>
               <p className="font-medium text-sm lg:text-base opacity-80 leading-relaxed">
-                Deposit your assets into Satellite Vaults on Polygon, Monad, or Base. Obolus securely tracks your collateral via CCIP to unlock global credit.
+                Send and receive funds via MagicBlock's Private Payments API. No public links between sender and receiver, ensuring 100% financial privacy for employees and employers.
               </p>
             </div>
             
@@ -241,9 +241,9 @@ export default function Home() {
             className="bg-[#7FF6FF] text-black rounded-3xl p-8 lg:p-12 relative overflow-hidden min-h-[300px]"
           >
             <div className="z-10 max-w-sm mb-8 relative">
-              <h3 className="text-3xl lg:text-4xl font-black uppercase tracking-tight leading-[0.9] mb-4">Identity &<br/>Trust</h3>
+              <h3 className="text-3xl lg:text-4xl font-black uppercase tracking-tight leading-[0.9] mb-4">TEE-Protected<br/>Credit Scoring</h3>
               <p className="font-medium text-sm opacity-80 leading-relaxed">
-                Integrated with Reclaim Protocol for Zero-Knowledge KYC and Sybil resistance to ensure robust, secure peer-to-peer credit pools.
+                Compute credit scores and loan eligibility inside Intel TDX enclaves. Your sensitive documents never leave the secure environment, only the result hits the rail.
               </p>
             </div>
             {/* Graphics mock */}
@@ -264,9 +264,9 @@ export default function Home() {
             className="bg-[#BB8EF6] text-black rounded-3xl p-8 lg:p-12 relative overflow-hidden min-h-[300px]"
           >
             <div className="z-10 max-w-sm mb-8 relative">
-              <h3 className="text-3xl lg:text-4xl font-black uppercase tracking-tight leading-[0.9] mb-4">One-Click<br/>Checkout</h3>
+              <h3 className="text-3xl lg:text-4xl font-black uppercase tracking-tight leading-[0.9] mb-4">Instant Shielded<br/>Loans</h3>
               <p className="font-medium text-sm opacity-80 leading-relaxed">
-                Seamless merchant integrations allow you to Buy Now and Pay Later with a single signed transaction, no matter where your collateral lives.
+                Access up to 50% of your future salary instantly. Shielded USDC loans are issued privately with automatic auto-repayment from incoming salary flows.
               </p>
             </div>
             {/* Graphics mock: overlapping circles */}
@@ -312,10 +312,10 @@ export default function Home() {
 
           <div className="max-w-md text-center lg:text-left z-10">
             <h2 className="text-3xl lg:text-4xl font-black text-[#ccff00] uppercase tracking-tight leading-[0.9] mb-4">
-              Decentralized &<br/>Trustless
+              Regulator Ready &<br/>Audit-Compliant
             </h2>
             <p className="font-medium text-sm lg:text-base opacity-80 leading-relaxed text-[#ccff00]/90">
-              Maintain full ownership of your collateral. Smart contracts handle LTV calculations, liquidation, and settlement automatically.
+              Generate verifiable TEE attestations for AML/KYC compliance without exposing PII. Seamlessly audit-compliant for VARA, ADGM, and CBUAE frameworks.
             </p>
           </div>
         </motion.section>
@@ -355,10 +355,10 @@ export default function Home() {
           </div>
           <div className="p-12 lg:p-16 lg:w-1/2 flex flex-col justify-center">
             <h2 className="text-3xl lg:text-4xl font-black text-[#ccff00] uppercase tracking-tight leading-[0.9] mb-4">
-              Build With Obolus
+              Scale With Obolus
             </h2>
             <p className="font-medium text-sm lg:text-base opacity-80 mb-8 text-[#ccff00]/90">
-              Integrate Obolus into your dApp or storefront to offer instant Web3 BNPL checkout to your customers.
+              Deploy shielded payroll systems and private credit primitives for your UAE free-zone enterprise or small business using our regulator-ready SDK.
             </p>
             <div>
               <button className="bg-[#ccff00] text-black font-bold text-xs uppercase tracking-wider px-8 py-3 rounded-full hover:bg-white transition-all">

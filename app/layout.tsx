@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Obolus | Monad Fintech Infrastructure",
-  description: "Non-custodial payment and credit infrastructure on Monad",
+  title: "Obolus Network | Private UAE Remittance & Salary Rail",
+  description: "Shielded payments and undercollateralized loans on Solana. Powered by MagicBlock PER for ultimate privacy and digital-first compliance.",
   icons: {
     icon: "/obolus.png",
     shortcut: "/obolus.png",

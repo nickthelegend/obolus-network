@@ -54,20 +54,21 @@ export default function Privacy() {
                         </section>
 
                         <section>
-                            <h3 className="text-xl font-bold text-white mb-4">2. Blockchain Data</h3>
+                            <h3 className="text-xl font-bold text-white mb-4">2. Shielded Privacy</h3>
                             <p>
-                                Transactions made using Obolus protocols are recorded on the Monad blockchain.
-                                This data is public by design and includes wallet addresses and transaction
-                                amounts. We do not have control over this data.
+                                Shielded transactions processed via Obolus are executed inside MagicBlock's Private Ephemeral Rollups (PER). 
+                                While the Solana blockchain records an attestation of the transaction for auditability, 
+                                sensitive data such as specific amounts and counterparty PII remain encrypted and private by default.
                             </p>
                         </section>
 
                         <section>
-                            <h3 className="text-xl font-bold text-white mb-4">3. Security</h3>
+                            <h3 className="text-xl font-bold text-white mb-4">3. TEE-Protected Compute</h3>
                             <p>
-                                We prioritize user security through formal verification of our smart contracts.
-                                However, users are responsible for the security of their own private keys.
-                                Obolus will never ask for your seed phrase.
+                                We prioritize user security through Intel TDX Trusted Execution Environments (TEE). 
+                                All credit scoring and sensitive payroll logic are computed in isolated enclaves that 
+                                prevent access even by the node operators. Users remain responsible for their own 
+                                private keys.
                             </p>
                         </section>
 
@@ -80,7 +81,7 @@ export default function Privacy() {
                         </section>
 
                         <section className="pt-10 border-t border-white/5 text-sm">
-                            <p>Last Updated: June 2024</p>
+                            <p>Last Updated: April 2026</p>
                             <p>Contact: privacy@obolus.network</p>
                         </section>
                     </div>
@@ -89,7 +90,7 @@ export default function Privacy() {
 
             <footer className="border-t border-white/5 px-6 lg:px-40 py-10 bg-card-dark">
                 <div className="max-w-[1400px] mx-auto flex justify-between items-center text-[10px] text-slate-500 uppercase tracking-widest">
-                    <p>© 2024 Obolus Finance</p>
+                    <p>© 2026 Obolus Network</p>
                     <a href="/" className="hover:text-primary transition-colors">Back to Home</a>
                 </div>
             </footer>
