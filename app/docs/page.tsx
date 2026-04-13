@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Link from "next/link";
 
 const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -10,53 +10,50 @@ const fadeInUp = {
     transition: { duration: 0.6 }
 };
 
-const Logo = ({ className = "" }: { className?: string }) => (
-    <div className={`relative w-8 h-8 ${className}`}>
-        <Image
-            src="/obolus.png"
-            alt="Obolus Logo"
-            fill
-            className="object-contain"
-            priority
-        />
-    </div>
+const Logo = () => (
+  <div className="flex items-center gap-1 font-black text-2xl tracking-tighter">
+    Obolus
+  </div>
 );
+
+import Footer from "@/components/Footer";
 
 export default function Docs() {
     const categories = [
-        { title: "Introduction", items: ["What is Obolus?", "MagicBlock PER", "Solana & TEE"] },
-        { title: "Payments", items: ["Private Payments API", "Shielded UAE Rail", "Batch Repayment"] },
-        { title: "Credit", items: ["Shielded BNPL", "Private Risk Models", "Auto-Repayment Hooks"] },
-        { title: "Privacy Layer", items: ["Intel TDX", "Attestations", "Audit Proofs"] },
+        { title: "Introduction", items: ["What is Obolus?", "MagicBlock PER", "Solana & TEE", "UAE Regulatory Context"] },
+        { title: "Functional Requirements", items: ["Shielded Salary Rail (FR-01)", "Private Credit Scoring (FR-02)", "Instant BNPL (FR-03)", "Auto-Repayment (FR-04)"] },
+        { title: "Technical Stack", items: ["MagicBlock Private Payments", "Intel TDX Enclaves", "Rust PER Delegation", "Reclaim SDK"] },
+        { title: "Compliance Layer", items: ["TEE Attestations", "Audit Portal", "VARA/ADGM Readiness"] },
     ];
 
     return (
-        <div className="min-h-screen bg-background-dark text-white font-display">
-            <header className="fixed top-0 z-[60] w-full border-b border-solid border-slate-200/10 dark:border-border-dark/50 bg-background-dark/40 backdrop-blur-xl px-6 lg:px-40 py-4">
+        <div className="min-h-screen bg-black text-white font-sans selection:bg-[#ccff00] selection:text-black">
+            <header className="fixed top-0 z-[60] w-full border-b border-white/10 bg-black/40 backdrop-blur-xl px-6 lg:px-20 py-6">
                 <div className="flex items-center justify-between max-w-[1400px] mx-auto">
-                    <a href="/" className="flex items-center gap-2">
+                    <Link href="/" className="flex items-center gap-2">
                         <Logo />
-                        <h2 className="text-lg font-bold tracking-tight">Obolus Docs</h2>
-                    </a>
-                    <nav className="hidden md:flex items-center gap-8 text-xs font-medium text-slate-400">
-                        <a href="/" className="hover:text-primary transition-colors">Home</a>
-                        <a href="/about" className="hover:text-primary transition-colors">About</a>
-                        <a href="/privacy" className="hover:text-primary transition-colors">Privacy</a>
+                        <span className="bg-[#ccff00] text-black text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded">Docs</span>
+                    </Link>
+                    <nav className="hidden md:flex items-center gap-8 font-bold text-[10px] tracking-widest uppercase">
+                        <Link href="/whitepaper" className="hover:opacity-70 transition-opacity">Whitepaper</Link>
+                        <Link href="/blog" className="hover:opacity-70 transition-opacity">Blog</Link>
+                        <Link href="https://t.me/obolusnetwork" className="hover:opacity-70 transition-opacity">Join Us</Link>
+                        <Link href="/" className="hover:opacity-70 transition-opacity">Home</Link>
                     </nav>
                 </div>
             </header>
 
-            <div className="pt-24 flex min-h-screen">
+            <div className="pt-24 flex min-h-screen max-w-[1400px] mx-auto">
                 {/* Sidebar */}
-                <aside className="hidden lg:block w-72 border-r border-white/5 p-10 fixed h-full overflow-y-auto">
+                <aside className="hidden lg:block w-72 border-r border-white/5 p-10 h-[calc(100vh-6rem)] sticky top-24 overflow-y-auto hide-scrollbar">
                     <div className="space-y-10">
                         {categories.map((cat, i) => (
                             <div key={i}>
-                                <h4 className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-4">{cat.title}</h4>
+                                <h4 className="text-[10px] uppercase tracking-widest text-[#ccff00] font-bold mb-4">{cat.title}</h4>
                                 <ul className="space-y-3">
                                     {cat.items.map((item, j) => (
                                         <li key={j}>
-                                            <a href="#" className="text-sm text-slate-400 hover:text-primary transition-colors">{item}</a>
+                                            <a href="#" className="text-sm text-slate-400 hover:text-white transition-colors">{item}</a>
                                         </li>
                                     ))}
                                 </ul>
@@ -66,47 +63,64 @@ export default function Docs() {
                 </aside>
 
                 {/* Content */}
-                <main className="flex-1 lg:ml-72 p-10 lg:p-20 overflow-y-auto">
+                <main className="flex-1 p-10 lg:p-20 overflow-y-auto">
                     <motion.div {...fadeInUp} className="max-w-3xl">
-                        <h1 className="text-4xl lg:text-6xl font-black mb-6">Documentation</h1>
+                        <h1 className="text-4xl lg:text-7xl font-black uppercase tracking-tight leading-[0.9] mb-8">
+                            Technical <span className="text-[#ccff00]">Documentation</span>
+                        </h1>
                         <p className="text-slate-400 text-lg leading-relaxed mb-12">
-                            Welcome to the Obolus Network technical documentation. Here you'll find everything you
-                            need to integrate decentralized payments and credit rails into your applications.
+                            Obolus Network is a privacy-first, regulator-auditable payment rail and BNPL system built on Solana using MagicBlock’s Private Ephemeral Rollups (PER).
                         </p>
 
-                        <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-20">
                             {[
-                                { title: "Quickstart", desc: "Get up and running in minutes.", icon: "bolt" },
-                                { title: "API Reference", desc: "Detailed endpoint documentation.", icon: "api" },
-                                { title: "SDKs", desc: "Libraries for JavaScript and Rust.", icon: "terminal" },
-                                { title: "Community", desc: "Join our developer discord.", icon: "forum" }
+                                { title: "Private Payments API", desc: "Shielded SPL/USDC transfer endpoint.", icon: "🔐" },
+                                { title: "Intel TDX Attestation", desc: "Mandatory on every PER call.", icon: "🛡️" },
+                                { title: "Sub-50ms Execution", desc: "High-performance PER validators.", icon: "⚡" },
+                                { title: "UAE Compliance", desc: "VARA/ADGM/CBUAE ready hooks.", icon: "🇦🇪" }
                             ].map((card, i) => (
-                                <div key={i} className="p-8 rounded-2xl bg-card-dark border border-white/5 hover:border-primary/20 transition-all cursor-pointer group">
-                                    <span className="material-symbols-outlined text-primary text-3xl mb-4 group-hover:scale-110 transition-transform">{card.icon}</span>
-                                    <h3 className="text-xl font-bold mb-2">{card.title}</h3>
+                                <div key={i} className="p-6 rounded-2xl bg-[#111] border border-white/5 hover:border-[#ccff00]/20 transition-all cursor-pointer group">
+                                    <div className="text-2xl mb-3">{card.icon}</div>
+                                    <h3 className="text-lg font-bold mb-1">{card.title}</h3>
                                     <p className="text-xs text-slate-500">{card.desc}</p>
                                 </div>
                             ))}
-                        </section>
+                        </div>
 
-                        <article className="prose prose-invert max-w-none text-slate-400">
-                            <h2 className="text-white text-3xl font-bold mb-6">Confidential Infrastructure</h2>
+                        <article className="prose prose-invert max-w-none text-slate-300">
+                            <h2 className="text-white text-3xl font-black uppercase tracking-tight mb-6">Shielded Salary Rail (FR-01)</h2>
                             <p className="mb-6">
-                                Obolus is built from the ground up to leverage Solana's high-speed rail and MagicBlock's 
-                                Private Ephemeral Rollups. Our infrastructure is designed for confidential computation, 
-                                sub-50ms execution, and predictable transaction costs.
+                                The sender connects their wallet and calls the MagicBlock Private Payments API. 
+                                Funds land in a PER-controlled vault, ensuring no public link between the sender and receiver is recorded on the public ledger.
                             </p>
-                            <div className="bg-slate-900 rounded-xl p-6 font-mono text-sm border border-white/5 mb-8">
-                                <span className="text-primary font-bold">// Initialize Obolus SDK</span><br />
-                                const obolus = new ObolusNetwork(&#123;<br />
-                                &nbsp;&nbsp;network: 'mainnet',<br />
-                                &nbsp;&nbsp;apiKey: process.env.OBOLUS_KEY<br />
+
+                            <div className="bg-[#111] rounded-xl p-8 border border-white/5 mb-8 font-mono text-sm overflow-x-auto">
+                                <span className="text-[#ccff00]">// Execute continuous private settlement</span><br />
+                                const response = await magicBlock.privateTransfer(&#123;<br />
+                                &nbsp;&nbsp;recipient: employee_pubkey,<br />
+                                &nbsp;&nbsp;amount: 8500,<br />
+                                &nbsp;&nbsp;token: 'USDC',<br />
+                                &nbsp;&nbsp;shielded: true<br />
                                 &#125;);
+                            </div>
+
+                            <h2 className="text-white text-3xl font-black uppercase tracking-tight mt-16 mb-6">Private Credit Scoring (FR-02)</h2>
+                            <p className="mb-6">
+                                Recipients upload salary certificates or Emirates ID proof via an off-chain oracle or Reclaim SDK. 
+                                The PER executes the credit model inside TEE (Intel TDX). Risk scores (0-100) and max loan amounts 
+                                (30-50% of next inflow) are calculated privately.
+                            </p>
+                            
+                            <div className="bg-[#ccff00] text-black p-6 rounded-2xl font-bold text-sm mb-12">
+                                💡 Resulting credit scores are stored privately; no sensitive data ever hits public Solana.
                             </div>
                         </article>
                     </motion.div>
                 </main>
             </div>
+            
+            <Footer />
         </div>
     );
 }
+

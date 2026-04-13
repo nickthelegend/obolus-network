@@ -2,98 +2,81 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Link from "next/link";
+import Footer from "@/components/Footer";
 
 const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 }
 };
 
-const Logo = ({ className = "" }: { className?: string }) => (
-    <div className={`relative w-8 h-8 ${className}`}>
-        <Image
-            src="/obolus.png"
-            alt="Obolus Logo"
-            fill
-            className="object-contain"
-            priority
-        />
-    </div>
-);
-
 export default function Privacy() {
-    return (
-        <div className="min-h-screen bg-background-dark text-white font-display">
-            <header className="fixed top-0 z-[60] w-full border-b border-solid border-slate-200/10 dark:border-border-dark/50 bg-background-dark/40 backdrop-blur-xl px-6 lg:px-40 py-4">
-                <div className="flex items-center justify-between max-w-[1400px] mx-auto">
-                    <a href="/" className="flex items-center gap-2">
-                        <Logo />
-                        <h2 className="text-lg font-bold tracking-tight">Obolus</h2>
-                    </a>
-                    <nav className="hidden md:flex items-center gap-8 text-xs font-medium text-slate-400">
-                        <a href="/" className="hover:text-primary transition-colors">Home</a>
-                        <a href="/about" className="hover:text-primary transition-colors">About</a>
-                        <a href="/docs" className="hover:text-primary transition-colors">Docs</a>
-                    </nav>
-                </div>
-            </header>
-
-            <main className="pt-32 pb-20 px-6 lg:px-40 max-w-4xl mx-auto">
-                <motion.div {...fadeInUp}>
-                    <h1 className="text-4xl lg:text-5xl font-black mb-12">Privacy Policy</h1>
-
-                    <div className="space-y-12 text-slate-400 leading-relaxed">
-                        <section>
-                            <h3 className="text-xl font-bold text-white mb-4">1. Information We Collect</h3>
-                            <p>
-                                Obolus is a decentralized network. We do not collect private keys, seed phrases, or
-                                personally identifiable matching (PII) beyond what is publicly available on the
-                                blockchain. Our services are designed to be privacy-preserving.
-                            </p>
-                        </section>
-
-                        <section>
-                            <h3 className="text-xl font-bold text-white mb-4">2. Shielded Privacy</h3>
-                            <p>
-                                Shielded transactions processed via Obolus are executed inside MagicBlock's Private Ephemeral Rollups (PER). 
-                                While the Solana blockchain records an attestation of the transaction for auditability, 
-                                sensitive data such as specific amounts and counterparty PII remain encrypted and private by default.
-                            </p>
-                        </section>
-
-                        <section>
-                            <h3 className="text-xl font-bold text-white mb-4">3. TEE-Protected Compute</h3>
-                            <p>
-                                We prioritize user security through Intel TDX Trusted Execution Environments (TEE). 
-                                All credit scoring and sensitive payroll logic are computed in isolated enclaves that 
-                                prevent access even by the node operators. Users remain responsible for their own 
-                                private keys.
-                            </p>
-                        </section>
-
-                        <section>
-                            <h3 className="text-xl font-bold text-white mb-4">4. Cookies</h3>
-                            <p>
-                                Our landing page may use minimal cookies for analytics to improve user experience.
-                                You can opt-out through your browser settings.
-                            </p>
-                        </section>
-
-                        <section className="pt-10 border-t border-white/5 text-sm">
-                            <p>Last Updated: April 2026</p>
-                            <p>Contact: privacy@obolus.network</p>
-                        </section>
-                    </div>
-                </motion.div>
-            </main>
-
-            <footer className="border-t border-white/5 px-6 lg:px-40 py-10 bg-card-dark">
-                <div className="max-w-[1400px] mx-auto flex justify-between items-center text-[10px] text-slate-500 uppercase tracking-widest">
-                    <p>© 2026 Obolus Network</p>
-                    <a href="/" className="hover:text-primary transition-colors">Back to Home</a>
-                </div>
-            </footer>
+  return (
+    <div className="min-h-screen bg-black text-white font-sans selection:bg-[#ccff00] selection:text-black">
+      {/* Navigation */}
+      <header className="fixed top-0 z-[60] w-full border-b border-white/10 bg-black/40 backdrop-blur-xl px-6 lg:px-20 py-6">
+        <div className="flex items-center justify-between max-w-[1400px] mx-auto">
+          <Link href="/" className="flex items-center gap-1 font-black text-2xl tracking-tighter">
+            Obolus
+          </Link>
+          <nav className="hidden md:flex items-center gap-8 font-bold text-[10px] tracking-widest uppercase text-white/50">
+             <Link href="/whitepaper" className="hover:text-white transition-opacity">Whitepaper</Link>
+             <Link href="/docs" className="hover:text-white transition-opacity">Docs</Link>
+             <Link href="/blog" className="hover:text-white transition-opacity">Blog</Link>
+             <Link href="/" className="hover:text-white transition-opacity">Home</Link>
+          </nav>
         </div>
-    );
+      </header>
+
+      <main className="pt-40 pb-24 px-6 lg:px-20 max-w-4xl mx-auto">
+        <motion.div {...fadeInUp}>
+          <h1 className="text-4xl lg:text-7xl font-black uppercase tracking-tight leading-[0.9] mb-12">
+            Privacy <span className="text-[#ccff00]">Notice</span>
+          </h1>
+
+          <div className="space-y-16 text-white/60 leading-relaxed text-lg pb-20">
+            <section>
+              <h2 className="text-xl font-black uppercase tracking-widest text-[#ccff00] mb-6 italic">1. Introduction</h2>
+              <p>
+                Obolus Network is committed to protecting the financial privacy of our users. In accordance with the SRSD and UAE regulatory frameworks (including CBUAE PTS and ADGM/VARA standards), this policy outlines how we handle sensitive data using Private Ephemeral Rollups (PER) and Trusted Execution Environments (TEE).
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-black uppercase tracking-widest text-[#ccff00] mb-6 italic">2. Shielded Data Handling</h2>
+              <p className="mb-6">
+                Unlike traditional transparent blockchains, Obolus ensures that sensitive transaction data—including salary amounts, counterparty identities, and credit scores—never hits the public ledger in an unencrypted state.
+              </p>
+              <ul className="list-disc pl-6 space-y-4 marker:text-[#ccff00]">
+                <li><strong>MagicBlock PER:</strong> All execution occurs within short-lived, private rollups that clear transaction state after settlement.</li>
+                <li><strong>On-Chain Attestations:</strong> The public Solana ledger only records a cryptographic proof (Intel TDX Attestation) that a valid, compliant transaction occurred.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-black uppercase tracking-widest text-[#ccff00] mb-6 italic">3. TEE-Protected Compute</h2>
+              <p>
+                All sensitive document processing (e.g., identity verification and salary certificate analysis) is performed inside <strong>Intel TDX enclaves</strong>. These hardware-secured isolated environments prevent even Obolus node operators from accessing your data. Your data is decrypted only within the enclave for the purposes of computing risk scores and loan eligibility.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-black uppercase tracking-widest text-[#ccff00] mb-6 italic">4. Regulatory Disclosure</h2>
+              <p>
+                While Obolus is privacy-first, it is not "privacy-exclusive." We implement an <strong>Audit Portal</strong> that allows authorized UAE regulators (VARA/ADGM/CBUAE) to verify compliance with AML/KYC checks using TEE-signed attestations. This process ensures institutional compliance without exposing your PII to the broader public or unauthorized third parties.
+              </p>
+            </section>
+
+            <section className="pt-12 border-t border-white/5 text-sm uppercase tracking-widest font-black opacity-40">
+              <p>Last Modified: April 14, 2026</p>
+              <p>Contact: legal@obolus.network</p>
+            </section>
+          </div>
+        </motion.div>
+      </main>
+
+      <Footer />
+    </div>
+  );
 }
