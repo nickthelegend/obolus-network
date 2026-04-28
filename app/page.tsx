@@ -14,8 +14,14 @@ const fadeInUp = {
 };
 
 const Logo = () => (
-  <div className="flex items-center gap-1 font-black text-2xl tracking-tighter">
-    Obolus
+  <div className="flex items-center gap-2 font-black text-2xl tracking-tighter">
+    <Image
+      src="/logo.png"
+      alt="Obolus Logo"
+      width={120}
+      height={30}
+      className="h-8 w-auto object-contain"
+    />
   </div>
 );
 
@@ -33,6 +39,11 @@ export default function Home() {
             <Link href="/docs" className="hover:opacity-70 transition-opacity">Docs</Link>
             <Link href="/blog" className="hover:opacity-70 transition-opacity">Blog</Link>
             <Link href="https://t.me/obolusnetwork" className="hover:opacity-70 transition-opacity">Join Us</Link>
+            <div className="flex items-center gap-2 border border-black/20 rounded-full px-3 py-1 cursor-pointer hover:bg-black/5 transition-colors">
+              <span className="text-black font-black">EN</span>
+              <span className="text-black/30">|</span>
+              <span className="text-black/50">AR</span>
+            </div>
           </nav>
           <a
             href="https://app.obolus.network"
@@ -51,17 +62,23 @@ export default function Home() {
             className="flex flex-col gap-8"
           >
             <h1 className="text-5xl lg:text-7xl font-black leading-[0.9] tracking-tight uppercase">
-              Private UAE<br />Salary Rail &<br />Instant Loans.
+              Private UAE<br />PUSD Inflow &<br />Instant Advance.
             </h1>
             <p className="text-sm lg:text-base font-medium max-w-md leading-relaxed">
-              Shielded remittances and undercollateralized credit on Solana. Powered by MagicBlock's Private Ephemeral Rollups for ultimate privacy and digital-first compliance.
+              Shielded salary, stipends, and freelance inflows on Solana. Powered by MagicBlock's Private Ephemeral Rollups for ultimate privacy and instant PUSD advances.
             </p>
-            <div>
+            <div className="flex flex-wrap gap-4">
               <Link
                 href="https://app.obolus.network"
                 className="inline-block bg-black text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-full hover:bg-neutral-800 hover:scale-105 transition-all"
               >
-                Get Credit
+                Get Advance
+              </Link>
+              <Link
+                href="https://app.obolus.network"
+                className="inline-block bg-white text-black font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-full border border-black hover:bg-neutral-100 hover:scale-105 transition-all"
+              >
+                Pay Bills
               </Link>
             </div>
 
@@ -87,9 +104,9 @@ export default function Home() {
           >
             <div className="flex items-center gap-3 mb-8">
               <div className="w-8 h-8 rounded-full bg-[#ccff00] flex items-center justify-center pt-1 text-black font-black text-xl leading-none">
-                ♦
+                $
               </div>
-              <span className="text-white font-bold text-sm tracking-wide">oblETH Collateral</span>
+              <span className="text-white font-bold text-sm tracking-wide">PUSD Account Balance</span>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
@@ -142,28 +159,55 @@ export default function Home() {
         {/* Partners */}
         <div className="flex flex-row flex-wrap lg:flex-nowrap justify-center gap-6 lg:gap-12 items-center opacity-40 grayscale pb-10 overflow-hidden">
           <span className="flex items-center gap-2 font-bold text-lg lg:text-xl tracking-tighter whitespace-nowrap">
-            <Image 
-              src="/magicblock.svg" 
-              alt="MagicBlock" 
-              width={24} 
-              height={24} 
-              className="w-5 h-5 object-contain"
+            <Image
+              src="/magicblock.svg"
+              alt="MagicBlock"
+              width={32}
+              height={32}
+              className="h-6 w-auto object-contain"
             />
             MagicBlock
           </span>
           <span className="flex items-center gap-2 font-bold text-lg lg:text-xl tracking-tighter whitespace-nowrap">
-            <Image 
-              src="/solanaLogoMark.svg" 
-              alt="Solana" 
-              width={24} 
-              height={24} 
-              className="w-5 h-5 object-contain"
+            <Image
+              src="/palm.svg"
+              alt="Palm USD"
+              width={32}
+              height={32}
+              className="h-6 w-auto object-contain"
+            />
+            Palm USD
+          </span>
+          <span className="flex items-center gap-2 font-bold text-lg lg:text-xl tracking-tighter whitespace-nowrap">
+            <Image
+              src="/solanaLogoMark.svg"
+              alt="Solana"
+              width={32}
+              height={32}
+              className="h-6 w-auto object-contain"
             />
             Solana
           </span>
-          <span className="font-bold text-lg lg:text-xl tracking-tighter whitespace-nowrap">Intel TDX</span>
           <span className="font-bold text-lg lg:text-xl tracking-tighter whitespace-nowrap uppercase">NeosLegal</span>
-          <span className="font-bold text-lg lg:text-xl tracking-tighter whitespace-nowrap">Colosseum</span>
+          <span className="font-bold text-lg lg:text-xl tracking-tighter whitespace-nowrap">Intel TDX</span>
+          <span className="flex items-center gap-2 font-bold text-lg lg:text-xl tracking-tighter whitespace-nowrap">
+            <Image
+              src="/superteam-uae.avif"
+              alt="Superteam UAE"
+              width={160}
+              height={40}
+              className="h-8 w-auto object-contain"
+            />
+          </span>
+          <span className="flex items-center gap-2 font-bold text-lg lg:text-xl tracking-tighter whitespace-nowrap">
+            <Image
+              src="/colosseum.svg"
+              alt="Colosseum"
+              width={100}
+              height={30}
+              className="h-8 w-auto object-contain"
+            />
+          </span>
         </div>
 
         {/* Introducing Banner */}
@@ -187,7 +231,7 @@ export default function Home() {
             <div className="flex-1 text-center md:text-left">
               <h2 className="text-xl lg:text-3xl font-bold text-white uppercase tracking-tight">
                 <span className="text-[#ccff00]">Introducing Obolus:</span><br />
-                Privacy-First Remittance & Credit
+                Shielded Inflows & Instant Advances
               </h2>
             </div>
 
@@ -231,9 +275,9 @@ export default function Home() {
             className="bg-[#5EF1A0] text-black rounded-3xl p-8 lg:p-12 flex flex-col justify-between overflow-hidden relative min-h-[440px] md:min-h-[600px] md:row-span-2"
           >
             <div className="z-10 max-w-sm mb-12">
-              <h3 className="text-3xl lg:text-5xl font-black uppercase tracking-tight leading-[0.9] mb-4">Shielded Salary<br />Rail</h3>
+              <h3 className="text-3xl lg:text-5xl font-black uppercase tracking-tight leading-[0.9] mb-4">Shielded PUSD<br />Inflows</h3>
               <p className="font-medium text-sm lg:text-base opacity-80 leading-relaxed">
-                Send and receive funds via MagicBlock's Private Payments API. No public links between sender and receiver, ensuring 100% financial privacy for employees and employers.
+                Receive salary, stipends, or freelance payments privately via MagicBlock's Private Payments API. Funds land securely in your PUSD account with zero public trace.
               </p>
             </div>
 
@@ -249,38 +293,15 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Card 2 */}
-          <motion.div
-            {...fadeInUp}
-            className="bg-[#7FF6FF] text-black rounded-3xl p-8 lg:p-12 relative overflow-hidden min-h-[300px]"
-          >
-            <div className="z-10 max-w-sm mb-8 relative">
-              <h3 className="text-3xl lg:text-4xl font-black uppercase tracking-tight leading-[0.9] mb-4">TEE-Protected<br />Credit Scoring</h3>
-              <p className="font-medium text-sm opacity-80 leading-relaxed">
-                Compute credit scores and loan eligibility inside Intel TDX enclaves. Your sensitive documents never leave the secure environment, only the result hits the rail.
-              </p>
-            </div>
-            {/* Graphics mock */}
-            <div className="absolute right-[-10%] bottom-[-20%] w-full h-[60%] border-t border-black/20 flex flex-col justify-end gap-2 pb-6 px-4">
-              <div className="w-48 h-16 rounded-full border border-black/20 self-end mr-10 bg-[#00A1A1] flex items-center justify-center relative shadow-inner">
-                {/* checkmark */}
-                <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <div className="w-56 h-12 rounded-full border border-black/20 self-center bg-[#00A1A1]/40"></div>
-            </div>
-          </motion.div>
-
-          {/* Card 3 */}
+          {/* Card 2: Instant Advances */}
           <motion.div
             {...fadeInUp}
             className="bg-[#BB8EF6] text-black rounded-3xl p-8 lg:p-12 relative overflow-hidden min-h-[300px]"
           >
             <div className="z-10 max-w-sm mb-8 relative">
-              <h3 className="text-3xl lg:text-4xl font-black uppercase tracking-tight leading-[0.9] mb-4">Instant Shielded<br />Loans</h3>
+              <h3 className="text-3xl lg:text-4xl font-black uppercase tracking-tight leading-[0.9] mb-4">Instant PUSD<br />Advances</h3>
               <p className="font-medium text-sm opacity-80 leading-relaxed">
-                Access up to 50% of your future salary instantly. Shielded USDC loans are issued privately with automatic auto-repayment from incoming salary flows.
+                Need cash now? Access 30–50% of your expected inflow instantly. Upload a salary slip, stipend letter, or parental support proof for a private credit score inside TEE.
               </p>
             </div>
             {/* Graphics mock: overlapping circles */}
@@ -295,6 +316,29 @@ export default function Home() {
                   }}></div>
               ))}
               <div className="absolute right-10 -bottom-10 w-[200px] h-[200px] bg-indigo-600 rounded-full"></div>
+            </div>
+          </motion.div>
+
+          {/* Card 3: One-Click Bill Pay */}
+          <motion.div
+            {...fadeInUp}
+            className="bg-[#7FF6FF] text-black rounded-3xl p-8 lg:p-12 relative overflow-hidden min-h-[300px]"
+          >
+            <div className="z-10 max-w-sm mb-8 relative">
+              <h3 className="text-3xl lg:text-4xl font-black uppercase tracking-tight leading-[0.9] mb-4">One-Click<br />UAE Bill Pay</h3>
+              <p className="font-medium text-sm opacity-80 leading-relaxed">
+                Pay your Etisalat, du, and DEWA bills instantly with your PUSD balance. Shielded transfers ensure your utility spending remains your business.
+              </p>
+            </div>
+            {/* Graphics mock */}
+            <div className="absolute right-[-10%] bottom-[-20%] w-full h-[60%] border-t border-black/20 flex flex-col justify-end gap-2 pb-6 px-4">
+              <div className="w-48 h-16 rounded-full border border-black/20 self-end mr-10 bg-[#00A1A1] flex items-center justify-center relative shadow-inner">
+                {/* checkmark */}
+                <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div className="w-56 h-12 rounded-full border border-black/20 self-center bg-[#00A1A1]/40"></div>
             </div>
           </motion.div>
 
@@ -325,11 +369,33 @@ export default function Home() {
 
           <div className="max-w-md text-center lg:text-left z-10">
             <h2 className="text-3xl lg:text-4xl font-black text-[#ccff00] uppercase tracking-tight leading-[0.9] mb-4">
-              Regulator Ready &<br />Audit-Compliant
+              MOHRE-Ready &<br />Audit-Compliant
             </h2>
             <p className="font-medium text-sm lg:text-base opacity-80 leading-relaxed text-[#ccff00]/90">
-              Generate verifiable TEE attestations for AML/KYC compliance without exposing PII. Seamlessly audit-compliant for VARA, ADGM, and CBUAE frameworks.
+              Generate verifiable TEE attestations for UAE Wage Protection System (WPS) compliance without exposing PII. Seamlessly audit-compliant for VARA and CBUAE frameworks.
             </p>
+          </div>
+        </motion.section>
+
+        {/* How it Works */}
+        <motion.section
+          {...fadeInUp}
+          className="py-24 grid grid-cols-1 md:grid-cols-3 gap-12"
+        >
+          <div className="flex flex-col gap-4">
+            <div className="text-4xl font-black text-[#ccff00]">01.</div>
+            <h3 className="text-xl font-bold uppercase tracking-tight">Connect Inflow</h3>
+            <p className="text-sm opacity-60">Connect your employer, university, or parent via the Obolus rail using MagicBlock Private Payments API.</p>
+          </div>
+          <div className="flex flex-col gap-4">
+            <div className="text-4xl font-black text-[#ccff00]">02.</div>
+            <h3 className="text-xl font-bold uppercase tracking-tight">Private Scoring</h3>
+            <p className="text-sm opacity-60">Upload proof of future inflow. PER computes your private credit score inside a secure TEE enclave.</p>
+          </div>
+          <div className="flex flex-col gap-4">
+            <div className="text-4xl font-black text-[#ccff00]">03.</div>
+            <h3 className="text-xl font-bold uppercase tracking-tight">Instant PUSD</h3>
+            <p className="text-sm opacity-60">Receive up to 50% of your expected inflow instantly in PUSD. Automatic repayment from future inflows.</p>
           </div>
         </motion.section>
 
@@ -373,9 +439,19 @@ export default function Home() {
             <p className="font-medium text-sm lg:text-base opacity-80 mb-8 text-[#ccff00]/90">
               Deploy shielded payroll systems and private credit primitives for your UAE free-zone enterprise or small business using our regulator-ready SDK.
             </p>
-            <div>
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-[#ccff00] rounded-full"></div>
+                <span className="text-xs font-bold uppercase tracking-widest text-[#ccff00]">Palm USD x Superteam UAE Global Track</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-[#ccff00] rounded-full"></div>
+                <span className="text-xs font-bold uppercase tracking-widest text-[#ccff00]">NeosLegal x Superteam UAE Side Track</span>
+              </div>
+            </div>
+            <div className="mt-10">
               <button className="bg-[#ccff00] text-black font-bold text-xs uppercase tracking-wider px-8 py-3 rounded-full hover:bg-white transition-all">
-                Get In Touch
+                Partner With Us
               </button>
             </div>
           </div>

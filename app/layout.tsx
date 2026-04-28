@@ -11,9 +11,9 @@ export const metadata: Metadata = {
   title: "Obolus Network | Private UAE Remittance & Salary Rail",
   description: "Shielded payments and undercollateralized loans on Solana. Powered by MagicBlock PER for ultimate privacy and digital-first compliance.",
   icons: {
-    icon: "/obolus.png",
-    shortcut: "/obolus.png",
-    apple: "/obolus.png",
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
 };
 

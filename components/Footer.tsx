@@ -9,15 +9,15 @@ const Footer = () => {
 
   const footerLinks = {
     product: [
-      { name: "Shielded Rail", href: "/docs" },
-      { name: "BNPL Credits", href: "/docs" },
-      { name: "Private Assets", href: "https://app.obolus.network" },
-      { name: "Institutional", href: "/docs" },
+      { name: "Shielded Inflow", href: "/docs" },
+      { name: "Instant Advance", href: "/docs" },
+      { name: "Bill Pay", href: "/docs" },
+      { name: "MOHRE Proofs", href: "/docs" },
     ],
     company: [
       { name: "About Us", href: "/about" },
       { name: "Vision", href: "/blog/our-vision-privacy-first-remittance" },
-      { name: "Careers", href: "#" },
+      { name: "NeosLegal", href: "https://neoslegal.co" },
       { name: "Contact", href: "https://t.me/obolusnetwork" },
     ],
     resources: [
@@ -83,7 +83,7 @@ const Footer = () => {
           {/* Stay Updated */}
           <div>
             <h4 className="text-[10px] uppercase tracking-[0.3em] font-black text-white/40 mb-8 italic">Stay Updated</h4>
-            <p className="text-xs text-white/50 mb-6 leading-relaxed">Join the Obolus waitlist for private UAE remittance alerts.</p>
+            <p className="text-xs text-white/50 mb-6 leading-relaxed">Join the Obolus waitlist for private UAE PUSD inflow alerts.</p>
             <form className="relative group" onSubmit={(e) => e.preventDefault()}>
               <input 
                 type="email" 
