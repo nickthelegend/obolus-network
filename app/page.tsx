@@ -188,8 +188,6 @@ export default function Home() {
             />
             Solana
           </span>
-          <span className="font-bold text-lg lg:text-xl tracking-tighter whitespace-nowrap uppercase">NeosLegal</span>
-          <span className="font-bold text-lg lg:text-xl tracking-tighter whitespace-nowrap">Intel TDX</span>
           <span className="flex items-center gap-2 font-bold text-lg lg:text-xl tracking-tighter whitespace-nowrap">
             <Image
               src="/superteam-uae.avif"
