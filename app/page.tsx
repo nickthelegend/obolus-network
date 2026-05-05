@@ -6,11 +6,11 @@ import Link from "next/link";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
+const fluidEntrance = {
+  initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.6 }
+  transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
 };
 
 const Logo = () => (
@@ -20,440 +20,238 @@ const Logo = () => (
       alt="Obolus Logo"
       width={120}
       height={30}
-      className="h-8 w-auto object-contain"
+      className="h-8 w-auto object-contain mix-blend-screen"
     />
   </div>
 );
 
+const GlassCard = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.95 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true }}
+    className={`bg-void/90 backdrop-blur-2xl border border-white/10 rounded-glass shadow-2xl animate-float ${className}`}
+  >
+    {children}
+  </motion.div>
+);
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white font-sans selection:bg-primary selection:text-black">
-      {/* HERO SECTION - Neon Lime Background */}
-      <div className="bg-[#ccff00] text-black w-full rounded-b-[3rem] lg:rounded-b-[4rem] px-6 lg:px-20 pb-20 relative overflow-hidden">
+    <div className="min-h-screen bg-void text-white font-sans selection:bg-primary selection:text-black overflow-x-hidden">
 
-        {/* Header */}
-        <header className="flex items-center justify-between py-6 max-w-[1400px] mx-auto z-10 relative">
+      {/* HERO SECTION - The Shout Color Area */}
+      <section className="bg-primary text-black w-full rounded-br-[120px] rounded-bl-[40px] px-6 lg:px-20 pb-32 relative overflow-hidden">
+        {/* Subtle background texture or organic shape */}
+        <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[80%] bg-black/5 rounded-full blur-3xl -z-0" />
+
+        <header className="flex items-center justify-between py-8 max-w-[1400px] mx-auto z-20 relative">
           <Logo />
-          <nav className="hidden md:flex items-center gap-8 font-bold text-[10px] tracking-widest uppercase">
-            <Link href="/whitepaper" className="hover:opacity-70 transition-opacity">Whitepaper</Link>
-            <Link href="/docs" className="hover:opacity-70 transition-opacity">Docs</Link>
-            <Link href="/blog" className="hover:opacity-70 transition-opacity">Blog</Link>
-            <Link href="https://t.me/obolusnetwork" className="hover:opacity-70 transition-opacity">Join Us</Link>
-            <div className="flex items-center gap-2 border border-black/20 rounded-full px-3 py-1 cursor-pointer hover:bg-black/5 transition-colors">
-              <span className="text-black font-black">EN</span>
-              <span className="text-black/30">|</span>
-              <span className="text-black/50">AR</span>
+          <nav className="hidden md:flex items-center gap-10 font-bold text-[10px] tracking-widest uppercase">
+            <Link href="/whitepaper" className="hover:opacity-60 transition-opacity">Whitepaper</Link>
+            <Link href="/docs" className="hover:opacity-60 transition-opacity">Docs</Link>
+            <Link href="/blog" className="hover:opacity-60 transition-opacity">Blog</Link>
+            <div className="flex items-center gap-2 border border-black/10 rounded-full px-4 py-1.5">
+              <span className="font-black">EN</span>
+              <span className="opacity-20">|</span>
+              <span className="opacity-40">AR</span>
             </div>
           </nav>
           <a
             href="https://app.obolus.network"
-            className="bg-black text-white font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-full hover:bg-neutral-800 transition-colors"
+            className="bg-black text-white font-black text-[10px] uppercase tracking-[0.2em] px-8 py-4 rounded-full hover:scale-105 active:scale-95 transition-all shadow-lg"
           >
             Launch App
           </a>
         </header>
 
-        {/* Hero Content */}
-        <div className="max-w-[1400px] mx-auto mt-20 lg:mt-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10 relative">
+        <div className="max-w-[1400px] mx-auto mt-24 lg:mt-40 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center z-10 relative">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col gap-8"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-7 flex flex-col gap-10"
           >
-            <h1 className="text-5xl lg:text-7xl font-black leading-[0.9] tracking-tight uppercase">
-              Private UAE<br />PUSD Inflow &<br />Instant Advance.
+            <h1 className="text-6xl md:text-7xl lg:text-9xl font-black leading-[0.85] tracking-tighter uppercase">
+              Private<br />
+              <span className="opacity-90">Digital</span><br />
+              <span className="bg-black text-primary px-4 py-1 inline-block mt-2">Finance</span>
             </h1>
-            <p className="text-sm lg:text-base font-medium max-w-md leading-relaxed">
+            <p className="text-sm md:text-base font-medium max-w-lg leading-relaxed opacity-80">
               Shielded salary, stipends, and freelance inflows on Solana. Powered by MagicBlock's Private Ephemeral Rollups for ultimate privacy and instant PUSD advances.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-5">
               <Link
                 href="https://app.obolus.network"
-                className="inline-block bg-black text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-full hover:bg-neutral-800 hover:scale-105 transition-all"
+                className="inline-block bg-black text-white font-black text-xs uppercase tracking-widest px-10 py-5 rounded-full hover:scale-105 active:scale-95 transition-all shadow-xl"
               >
                 Get Advance
               </Link>
               <Link
                 href="https://app.obolus.network"
-                className="inline-block bg-white text-black font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-full border border-black hover:bg-neutral-100 hover:scale-105 transition-all"
+                className="inline-block bg-transparent text-black border-2 border-black/20 font-black text-xs uppercase tracking-widest px-10 py-5 rounded-full hover:bg-black/5 hover:scale-105 active:scale-95 transition-all"
               >
                 Pay Bills
               </Link>
             </div>
-
-            <div className="flex items-center gap-12 mt-8 pt-8 border-t border-black/10">
-              <div>
-                <p className="text-[10px] font-bold uppercase tracking-widest mb-1">Supported Chains</p>
-                <div className="text-3xl font-black">4+</div>
-              </div>
-              <div className="w-px h-12 bg-black/10"></div>
-              <div>
-                <p className="text-[10px] font-bold uppercase tracking-widest mb-1">Payment Speed</p>
-                <div className="text-3xl font-black">&lt;2s</div>
-              </div>
-            </div>
           </motion.div>
 
-          {/* Hero Dashboard Graphic Mockup */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-[#111] rounded-3xl p-6 shadow-2xl overflow-hidden border border-[#222]"
-          >
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-8 h-8 rounded-full bg-[#ccff00] flex items-center justify-center pt-1 text-black font-black text-xl leading-none">
-                $
+          <div className="lg:col-span-5 relative h-full flex items-center justify-center lg:justify-end">
+            <GlassCard className="w-full max-w-md p-8 relative z-10">
+              <div className="flex items-center justify-between mb-10">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center pt-1 text-black font-black text-2xl">
+                    $
+                  </div>
+                  <span className="text-white font-black text-xs uppercase tracking-widest">PUSD Balance</span>
+                </div>
+                <div className="bg-primary text-black text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter">
+                  Verified
+                </div>
               </div>
-              <span className="text-white font-bold text-sm tracking-wide">PUSD Account Balance</span>
-            </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-[#1a1a1a] rounded-xl p-4 col-span-1 h-32 flex flex-col justify-between">
-                <span className="text-[#ccff00] text-[8px] font-bold uppercase tracking-widest">Credit Utilization</span>
-                <div className="flex items-end gap-1 h-16">
-                  {/* Mock Bar Chart */}
-                  {[4, 5, 6, 6, 7, 8, 8, 9, 9, 10, 11, 12, 13, 15, 18, 22].map((h, i) => (
-                    <div key={i} className="bg-[#ccff00] w-full rounded-sm" style={{ height: `${h * 4}%` }} />
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                <div className="bg-white/5 rounded-2xl p-5 border border-white/5">
+                  <span className="text-primary text-[8px] font-black uppercase tracking-[0.2em] mb-2 block">Utilization</span>
+                  <div className="text-2xl font-black text-primary">24.8%</div>
+                </div>
+                <div className="bg-white/5 rounded-2xl p-5 border border-white/5">
+                  <span className="text-primary text-[8px] font-black uppercase tracking-[0.2em] mb-2 block">Interest</span>
+                  <div className="text-2xl font-black text-primary">0%*</div>
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-2xl p-5 border border-white/5 mb-8">
+                <span className="text-primary text-[8px] font-black uppercase tracking-[0.2em] mb-4 block">Repayment Schedule</span>
+                <div className="flex items-end gap-1.5 h-16">
+                  {[3, 5, 8, 4, 12, 15, 10, 18, 22, 14, 19, 25].map((h, i) => (
+                    <div key={i} className="bg-primary/60 w-full rounded-sm hover:bg-primary transition-colors" style={{ height: `${h * 4}%` }} />
                   ))}
                 </div>
               </div>
 
-              <div className="grid grid-rows-2 gap-4 col-span-1">
-                <div className="bg-[#1a1a1a] rounded-xl p-4 flex flex-col justify-center">
-                  <span className="text-[#ccff00] text-[8px] font-bold uppercase tracking-widest mb-1">Interest Rate</span>
-                  <span className="text-white font-bold text-xl">4.2%</span>
-                </div>
-                <div className="bg-[#1a1a1a] rounded-xl p-4 flex flex-col justify-center">
-                  <span className="text-[#ccff00] text-[8px] font-bold uppercase tracking-widest mb-1">Credit Manager</span>
-                  <span className="text-white font-medium text-xs opacity-80 truncate">0x73e...eDd9</span>
-                </div>
-              </div>
-
-              <div className="bg-[#1a1a1a] rounded-xl p-4 col-span-1 h-32 flex flex-col">
-                <span className="text-[#ccff00] text-[8px] font-bold uppercase tracking-widest mb-auto">Total Debt</span>
-                {/* Mock Line Chart SVG Curve */}
-                <svg viewBox="0 0 100 50" className="w-full h-16 stroke-[#ccff00] fill-none" preserveAspectRatio="none">
-                  <path d="M0,45 C20,40 40,40 60,30 C80,20 90,10 100,5" strokeWidth="1" />
-                </svg>
-              </div>
-
-              <div className="bg-[#1a1a1a] rounded-xl p-4 col-span-1 flex flex-col justify-center">
-                <span className="text-[#ccff00] text-[8px] font-bold uppercase tracking-widest mb-2">Credit Limit</span>
-                <div className="h-2 w-full bg-[#333] rounded-full flex overflow-hidden">
-                  <div className="h-full bg-[#ccff00] w-[60%]"></div>
-                  {/* Dotted lines effect over it */}
-                  <div className="absolute h-2 w-[calc(50%-2rem)] flex gap-[2px]">
-                    {Array.from({ length: 30 }).map((_, i) => <div key={i} className="h-full w-[2px] bg-black/50"></div>)}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-
-      <main className="max-w-[1400px] mx-auto px-6 lg:px-20 py-24 flex flex-col gap-8">
-
-        {/* Partners */}
-        <div className="flex flex-row flex-wrap lg:flex-nowrap justify-center gap-6 lg:gap-12 items-center opacity-40 grayscale pb-10 overflow-hidden">
-          <span className="flex items-center gap-2 font-bold text-lg lg:text-xl tracking-tighter whitespace-nowrap">
-            <Image
-              src="/magicblock.svg"
-              alt="MagicBlock"
-              width={32}
-              height={32}
-              className="h-6 w-auto object-contain"
-            />
-            MagicBlock
-          </span>
-          <span className="flex items-center gap-2 font-bold text-lg lg:text-xl tracking-tighter whitespace-nowrap">
-            <Image
-              src="/palm.svg"
-              alt="Palm USD"
-              width={32}
-              height={32}
-              className="h-6 w-auto object-contain"
-            />
-            Palm USD
-          </span>
-          <span className="flex items-center gap-2 font-bold text-lg lg:text-xl tracking-tighter whitespace-nowrap">
-            <Image
-              src="/solanaLogoMark.svg"
-              alt="Solana"
-              width={32}
-              height={32}
-              className="h-6 w-auto object-contain"
-            />
-            Solana
-          </span>
-          <span className="flex items-center gap-2 font-bold text-lg lg:text-xl tracking-tighter whitespace-nowrap">
-            <Image
-              src="/superteam-uae.avif"
-              alt="Superteam UAE"
-              width={160}
-              height={40}
-              className="h-8 w-auto object-contain"
-            />
-          </span>
-          <span className="flex items-center gap-2 font-bold text-lg lg:text-xl tracking-tighter whitespace-nowrap">
-            <Image
-              src="/colosseum.svg"
-              alt="Colosseum"
-              width={100}
-              height={30}
-              className="h-8 w-auto object-contain"
-            />
-          </span>
-        </div>
-
-        {/* Introducing Banner */}
-        <motion.section
-          {...fadeInUp}
-          className="bg-gradient-to-r from-black via-[#050505] to-black border border-white/10 rounded-2xl p-8 lg:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden"
-        >
-          {/* Mock 3D YO logo graphic */}
-          <div className="absolute left-0 top-0 bottom-0 w-1/3 bg-gradient-to-r from-[#ccff00]/10 to-transparent blur-3xl z-0"></div>
-
-          <div className="flex items-center gap-12 z-10 w-full">
-            <div className="hidden lg:flex relative w-32 h-32 items-center justify-center transform -rotate-12">
-              <div className="text-[120px] font-black leading-none text-transparent" style={{ WebkitTextStroke: '2px #ccff00', textShadow: "0 0 20px rgba(204,255,0,0.5)" }}>
-                O
-              </div>
-              <div className="absolute translate-x-12 translate-y-4 text-[120px] font-black leading-none text-[#ccff00] drop-shadow-[0_0_30px_rgba(204,255,0,0.4)]">
-                O
-              </div>
-            </div>
-
-            <div className="flex-1 text-center md:text-left">
-              <h2 className="text-xl lg:text-3xl font-bold text-white uppercase tracking-tight">
-                <span className="text-[#ccff00]">Introducing Obolus:</span><br />
-                Shielded Inflows & Instant Advances
-              </h2>
-            </div>
-
-            <Link
-              href="https://app.obolus.network"
-              className="bg-[#ccff00] text-black font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-full hover:bg-white hover:scale-105 transition-all whitespace-nowrap"
-            >
-              Get Started
-            </Link>
-          </div>
-        </motion.section>
-
-        {/* Built By Banner */}
-        <motion.section
-          {...fadeInUp}
-          className="bg-[#85A1FF] text-black rounded-2xl p-8 lg:p-10 flex flex-col md:flex-row items-center justify-between gap-8"
-        >
-          <div className="max-w-xl">
-            <h2 className="text-3xl lg:text-4xl font-black mb-4 tracking-tighter uppercase">Powered By MagicBlock PER</h2>
-            <p className="font-medium text-sm leading-relaxed opacity-80">
-              Private Ephemeral Rollups enable sub-50ms confidential compute, ensuring your salary data and credit scoring stay private while remaining regulator-auditable.
-            </p>
-          </div>
-          <div className="font-black text-xl italic opacity-90 flex flex-col items-center">
-            {/* Mock MagicBlock logo */}
-            <div className="flex gap-1 mb-1">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" /></svg>
-              </div>
-            </div>
-            MagicBlock
-          </div>
-        </motion.section>
-
-        {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-          {/* Card 1 */}
-          <motion.div
-            {...fadeInUp}
-            className="bg-[#5EF1A0] text-black rounded-3xl p-8 lg:p-12 flex flex-col justify-between overflow-hidden relative min-h-[440px] md:min-h-[600px] md:row-span-2"
-          >
-            <div className="z-10 max-w-sm mb-12">
-              <h3 className="text-3xl lg:text-5xl font-black uppercase tracking-tight leading-[0.9] mb-4">Shielded PUSD<br />Inflows</h3>
-              <p className="font-medium text-sm lg:text-base opacity-80 leading-relaxed">
-                Receive salary, stipends, or freelance payments privately via MagicBlock's Private Payments API. Funds land securely in your PUSD account with zero public trace.
-              </p>
-            </div>
-
-            {/* Radar graphic mock */}
-            <div className="absolute -bottom-20 -right-20 lg:-bottom-10 lg:-left-20 w-[600px] h-[600px] rounded-full border border-black/10 flex items-center justify-center z-0">
-              <div className="w-[450px] h-[450px] rounded-full border border-black/10 flex items-center justify-center relative">
-                <div className="absolute top-[10%] left-[20%] w-6 h-6 bg-white rounded-full"></div>
-                <div className="w-[300px] h-[300px] rounded-full border border-black/10 flex items-center justify-center relative">
-                  <div className="absolute -top-3 right-[15%] w-10 h-10 bg-[#33A96C] rounded-full"></div>
-                  <div className="w-[150px] h-[150px] bg-[#33A96C] rounded-full"></div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Card 2: Instant Advances */}
-          <motion.div
-            {...fadeInUp}
-            className="bg-[#BB8EF6] text-black rounded-3xl p-8 lg:p-12 relative overflow-hidden min-h-[300px]"
-          >
-            <div className="z-10 max-w-sm mb-8 relative">
-              <h3 className="text-3xl lg:text-4xl font-black uppercase tracking-tight leading-[0.9] mb-4">Instant PUSD<br />Advances</h3>
-              <p className="font-medium text-sm opacity-80 leading-relaxed">
-                Need cash now? Access 30–50% of your expected inflow instantly. Upload a salary slip, stipend letter, or parental support proof for a private credit score inside TEE.
-              </p>
-            </div>
-            {/* Graphics mock: overlapping circles */}
-            <div className="absolute right-0 bottom-[-30%] w-[120%] h-[80%] flex items-end opacity-60 mix-blend-multiply">
-              {Array.from({ length: 8 }).map((_, i) => (
-                <div key={i} className="absolute right-0 bottom-0 rounded-full border border-indigo-900/40"
-                  style={{
-                    width: `${200 + i * 40}px`,
-                    height: `${200 + i * 40}px`,
-                    right: `${i * 30 - 100}px`,
-                    bottom: `-50px`
-                  }}></div>
-              ))}
-              <div className="absolute right-10 -bottom-10 w-[200px] h-[200px] bg-indigo-600 rounded-full"></div>
-            </div>
-          </motion.div>
-
-          {/* Card 3: One-Click Bill Pay */}
-          <motion.div
-            {...fadeInUp}
-            className="bg-[#7FF6FF] text-black rounded-3xl p-8 lg:p-12 relative overflow-hidden min-h-[300px]"
-          >
-            <div className="z-10 max-w-sm mb-8 relative">
-              <h3 className="text-3xl lg:text-4xl font-black uppercase tracking-tight leading-[0.9] mb-4">One-Click<br />UAE Bill Pay</h3>
-              <p className="font-medium text-sm opacity-80 leading-relaxed">
-                Pay your Etisalat, du, and DEWA bills instantly with your PUSD balance. Shielded transfers ensure your utility spending remains your business.
-              </p>
-            </div>
-            {/* Graphics mock */}
-            <div className="absolute right-[-10%] bottom-[-20%] w-full h-[60%] border-t border-black/20 flex flex-col justify-end gap-2 pb-6 px-4">
-              <div className="w-48 h-16 rounded-full border border-black/20 self-end mr-10 bg-[#00A1A1] flex items-center justify-center relative shadow-inner">
-                {/* checkmark */}
-                <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <div className="w-56 h-12 rounded-full border border-black/20 self-center bg-[#00A1A1]/40"></div>
-            </div>
-          </motion.div>
-
-        </div>
-
-        {/* Non-custodial banner */}
-        <motion.section
-          {...fadeInUp}
-          className="bg-[#212320] text-white rounded-3xl p-8 lg:p-16 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-12 mt-10 overflow-hidden relative"
-        >
-          {/* Radial Dot Pattern Graphic */}
-          <div className="relative w-64 h-64 flex items-center justify-center">
-            <div className="absolute inset-0 flex items-center justify-center">
-              {/* Dots */}
-              <div className="grid grid-cols-5 gap-6 opacity-30">
-                {Array.from({ length: 25 }).map((_, i) => <div key={i} className="w-1 h-1 bg-white rounded-full"></div>)}
-              </div>
-            </div>
-            {/* Circular layout */}
-            <div className="relative w-48 h-48 border border-white/5 rounded-full flex items-center justify-center animate-[spin_60s_linear_infinite]">
-              {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => (
-                <div key={deg} className="absolute w-8 h-8 rounded-full bg-white/5 backdrop-blur-sm border border-white/10"
-                  style={{ transform: `rotate(${deg}deg) translateY(-80px)` }}></div>
-              ))}
-            </div>
-            {/* Center Empty */}
-          </div>
-
-          <div className="max-w-md text-center lg:text-left z-10">
-            <h2 className="text-3xl lg:text-4xl font-black text-[#ccff00] uppercase tracking-tight leading-[0.9] mb-4">
-              MOHRE-Ready &<br />Audit-Compliant
-            </h2>
-            <p className="font-medium text-sm lg:text-base opacity-80 leading-relaxed text-[#ccff00]/90">
-              Generate verifiable TEE attestations for UAE Wage Protection System (WPS) compliance without exposing PII. Seamlessly audit-compliant for VARA and CBUAE frameworks.
-            </p>
-          </div>
-        </motion.section>
-
-        {/* How it Works */}
-        <motion.section
-          {...fadeInUp}
-          className="py-24 grid grid-cols-1 md:grid-cols-3 gap-12"
-        >
-          <div className="flex flex-col gap-4">
-            <div className="text-4xl font-black text-[#ccff00]">01.</div>
-            <h3 className="text-xl font-bold uppercase tracking-tight">Connect Inflow</h3>
-            <p className="text-sm opacity-60">Connect your employer, university, or parent via the Obolus rail using MagicBlock Private Payments API.</p>
-          </div>
-          <div className="flex flex-col gap-4">
-            <div className="text-4xl font-black text-[#ccff00]">02.</div>
-            <h3 className="text-xl font-bold uppercase tracking-tight">Private Scoring</h3>
-            <p className="text-sm opacity-60">Upload proof of future inflow. PER computes your private credit score inside a secure TEE enclave.</p>
-          </div>
-          <div className="flex flex-col gap-4">
-            <div className="text-4xl font-black text-[#ccff00]">03.</div>
-            <h3 className="text-xl font-bold uppercase tracking-tight">Instant PUSD</h3>
-            <p className="text-sm opacity-60">Receive up to 50% of your expected inflow instantly in PUSD. Automatic repayment from future inflows.</p>
-          </div>
-        </motion.section>
-
-        {/* Join Community */}
-        <motion.section
-          {...fadeInUp}
-          className="py-32 flex flex-col items-center justify-center text-center px-4"
-        >
-          <h2 className="text-4xl lg:text-6xl font-black uppercase tracking-tight leading-[0.9] mb-12">
-            <span className="text-[#ccff00]">Join Our Community</span><br />
-            For The Latest Updates
-          </h2>
-          <a
-            href="https://t.me/obolusnetwork"
-            className="bg-[#ccff00] text-black font-bold text-sm uppercase tracking-wider px-10 py-5 rounded-full hover:bg-white hover:scale-105 transition-all flex items-center gap-3"
-          >
-            <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.54-.36-.63-.2-1.12-.31-1.08-.65.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.28-.01.07.01.19 0 .33z" /></svg>
-            Join Telegram
-          </a>
-        </motion.section>
-
-        {/* Build With YO */}
-        <motion.section
-          {...fadeInUp}
-          className="bg-[#212320] text-white rounded-3xl overflow-hidden flex flex-col lg:flex-row mb-12"
-        >
-          <div className="w-full lg:w-1/2 min-h-[300px] border-r border-[#333] relative p-8">
-            {/* Mock grid wireframe graphic */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#333_1px,transparent_1px),linear-gradient(to_bottom,#333_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30"></div>
-            <div className="absolute inset-0 flex items-center justify-center mix-blend-screen opacity-50">
-              <div className="w-48 h-48 border-[2px] border-[#ccff00] rounded-full translate-x-12"></div>
-              <div className="w-0 h-0 border-l-[100px] border-l-transparent border-t-[150px] border-t-white/30 border-r-[100px] border-r-transparent -translate-x-12 translate-y-12 backdrop-blur-md"></div>
-            </div>
-            <div className="absolute w-full h-[1px] bg-[#ccff00]/40 rotate-12 top-1/2 -left-10"></div>
-            <div className="absolute w-[1px] h-full bg-[#ccff00]/40 rotate-[30deg] left-1/3 top-0"></div>
-          </div>
-          <div className="p-12 lg:p-16 lg:w-1/2 flex flex-col justify-center">
-            <h2 className="text-3xl lg:text-4xl font-black text-[#ccff00] uppercase tracking-tight leading-[0.9] mb-4">
-              Scale With Obolus
-            </h2>
-            <p className="font-medium text-sm lg:text-base opacity-80 mb-8 text-[#ccff00]/90">
-              Deploy shielded payroll systems and private credit primitives for your UAE free-zone enterprise or small business using our regulator-ready SDK.
-            </p>
-            <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-[#ccff00] rounded-full"></div>
-                <span className="text-xs font-bold uppercase tracking-widest text-[#ccff00]">Palm USD x Superteam UAE Global Track</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-[#ccff00] rounded-full"></div>
-                <span className="text-xs font-bold uppercase tracking-widest text-[#ccff00]">NeosLegal x Superteam UAE Side Track</span>
-              </div>
-            </div>
-            <div className="mt-10">
-              <button className="bg-[#ccff00] text-black font-bold text-xs uppercase tracking-wider px-8 py-3 rounded-full hover:bg-white transition-all">
-                Partner With Us
+              <button className="w-full bg-primary text-black font-black text-[10px] uppercase tracking-widest py-4 rounded-full hover:bg-white transition-colors">
+                Instant Liquidity
               </button>
-            </div>
+            </GlassCard>
+
+            {/* Background Decorative Element */}
+            <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-black rounded-full blur-[100px] opacity-40 -z-0" />
           </div>
-        </motion.section>
+        </div>
+      </section>
+
+      {/* THE VOID - Transition Section */}
+      <main className="bg-void relative pt-32 pb-40 px-6 lg:px-20">
+
+        {/* Partner Ticker in the Void */}
+        <div className="max-w-[1400px] mx-auto mb-40">
+          <p className="text-[10px] font-black text-white/20 uppercase tracking-[0.4em] text-center mb-16">Powered by the Industry Leaders</p>
+          <div className="flex flex-row flex-wrap justify-center gap-12 lg:gap-24 items-center grayscale opacity-30 hover:opacity-80 transition-opacity">
+            <Image src="/magicblock.svg" alt="MagicBlock" width={140} height={40} className="h-8 w-auto object-contain" />
+            <Image src="/palm.svg" alt="Palm USD" width={140} height={40} className="h-8 w-auto object-contain" />
+            <Image src="/solanaLogoMark.svg" alt="Solana" width={140} height={40} className="h-8 w-auto object-contain" />
+            <Image src="/superteam-uae.avif" alt="Superteam UAE" width={140} height={40} className="h-8 w-auto object-contain" />
+            <Image src="/colosseum.svg" alt="Colosseum" width={140} height={40} className="h-8 w-auto object-contain" />
+          </div>
+        </div>
+
+        {/* Feature Grid with Liquid Geometry */}
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
+
+          {/* Large Shielded Inflow Card */}
+          <motion.div
+            {...fluidEntrance}
+            className="md:col-span-8 bg-charcoal rounded-[48px] p-10 lg:p-16 relative overflow-hidden group border border-white/5"
+          >
+            <div className="relative z-10 max-w-lg">
+              <span className="text-primary font-black text-[10px] uppercase tracking-[0.3em] mb-6 block">Confidential Rails</span>
+              <h2 className="text-5xl lg:text-7xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
+                Shielded<br />PUSD Inflows
+              </h2>
+              <p className="text-sm font-medium opacity-60 leading-relaxed max-w-md">
+                Receive salary, stipends, or freelance payments privately via MagicBlock's Private Payments API. Funds land securely in your PUSD account with zero public trace on-chain.
+              </p>
+            </div>
+
+            {/* Organic Shape Mockup */}
+            <div className="absolute right-[-10%] bottom-[-10%] w-[60%] h-[70%] bg-primary/5 rounded-full blur-[80px] group-hover:bg-primary/10 transition-all duration-700" />
+            <div className="absolute right-10 bottom-10 w-32 h-32 border-2 border-primary/20 rounded-full flex items-center justify-center animate-pulse">
+              <div className="w-16 h-16 bg-primary/10 rounded-full" />
+            </div>
+          </motion.div>
+
+          {/* Small Feature Card */}
+          <motion.div
+            {...fluidEntrance}
+            className="md:col-span-4 bg-primary text-black rounded-[48px] p-10 flex flex-col justify-between group overflow-hidden relative"
+          >
+            <div className="z-10">
+              <span className="font-black text-[10px] uppercase tracking-[0.3em] mb-4 block">Speed</span>
+              <h3 className="text-4xl font-black uppercase tracking-tighter leading-none mb-6">Instant<br />Advances</h3>
+            </div>
+            <p className="text-xs font-bold opacity-70 relative z-10">
+              Access up to 50% of your expected inflow instantly. Zero friction, zero waiting.
+            </p>
+            <div className="absolute -right-10 -bottom-10 w-48 h-48 bg-black/10 rounded-full scale-150 group-hover:scale-175 transition-transform duration-700" />
+          </motion.div>
+
+          {/* Bill Pay Card */}
+          <motion.div
+            {...fluidEntrance}
+            className="md:col-span-5 bg-charcoal rounded-[48px] p-10 lg:p-12 border border-white/5 relative overflow-hidden"
+          >
+            <h3 className="text-4xl font-black uppercase tracking-tighter mb-6">One-Click<br />UAE Bill Pay</h3>
+            <p className="text-xs font-medium opacity-50 mb-10">Pay Etisalat, du, and DEWA instantly. Private transfers ensure your utility spending remains your business.</p>
+            <div className="flex gap-3">
+              <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                <div className="w-1.5 h-1.5 bg-primary rounded-full" />
+              </div>
+              <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                <div className="w-1.5 h-1.5 bg-primary rounded-full opacity-50" />
+              </div>
+              <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                <div className="w-1.5 h-1.5 bg-primary rounded-full opacity-20" />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* MOHRE Card */}
+          <motion.div
+            {...fluidEntrance}
+            className="md:col-span-7 bg-[#212320] rounded-[48px] p-10 lg:p-12 relative overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 p-8">
+              <div className="bg-primary/20 text-primary text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest border border-primary/20">
+                Compliant
+              </div>
+            </div>
+            <h3 className="text-4xl lg:text-5xl font-black uppercase tracking-tighter mb-6 text-primary">MOHRE-Ready &<br />Audit-Compliant</h3>
+            <p className="text-sm font-medium opacity-70 max-w-md">Generate verifiable TEE attestations for UAE Wage Protection System (WPS) compliance without exposing PII. Ready for VARA and CBUAE frameworks.</p>
+          </motion.div>
+
+        </div>
+
+        {/* Big CTA Section with Organic Geometry */}
+        <div className="max-w-[1400px] mx-auto mt-40">
+          <motion.div
+            {...fluidEntrance}
+            className="bg-primary text-black rounded-[80px] p-12 lg:p-24 flex flex-col items-center text-center relative overflow-hidden"
+          >
+            {/* Liquid Overlay */}
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.05)_100%)]" />
+
+            <h2 className="text-5xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.85] mb-12 relative z-10">
+              Join the<br />Obolus Network
+            </h2>
+            <Link
+              href="https://t.me/obolus_network"
+              className="bg-black text-white font-black text-sm uppercase tracking-[0.3em] px-16 py-7 rounded-full hover:scale-105 active:scale-95 transition-all shadow-2xl relative z-10"
+            >
+              Join Telegram
+            </Link>
+          </motion.div>
+        </div>
 
       </main>
 
@@ -461,5 +259,3 @@ export default function Home() {
     </div>
   );
 }
-
-

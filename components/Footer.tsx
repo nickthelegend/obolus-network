@@ -29,7 +29,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#0a0a0a] text-[#ededed] pt-24 pb-12 font-sans selection:bg-[#ccff00] selection:text-black mt-20">
+    <footer className="bg-void text-[#ededed] pt-32 pb-16 font-sans selection:bg-primary selection:text-black mt-0 border-t border-white/5">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-20">
         
         {/* Top Section: Oversized Typography */}
@@ -37,9 +37,9 @@ const Footer = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="w-full mb-24 overflow-hidden"
+          className="w-full mb-32 overflow-hidden"
         >
-          <h2 className="text-[clamp(4rem,18vw,14rem)] font-black uppercase tracking-tighter leading-[0.8] mb-0 pointer-events-none select-none opacity-[0.9]">
+          <h2 className="text-[clamp(4rem,22vw,20rem)] font-black uppercase tracking-tighter leading-[0.75] mb-0 pointer-events-none select-none opacity-90 text-primary">
             OBOLUS
           </h2>
         </motion.div>
@@ -52,7 +52,7 @@ const Footer = () => {
             <ul className="flex flex-col gap-4 text-sm font-medium">
               {footerLinks.product.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-[#ccff00] transition-colors">{link.name}</Link>
+                  <Link href={link.href} className="hover:text-primary transition-colors">{link.name}</Link>
                 </li>
               ))}
             </ul>
@@ -63,7 +63,7 @@ const Footer = () => {
             <ul className="flex flex-col gap-4 text-sm font-medium">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-[#ccff00] transition-colors">{link.name}</Link>
+                  <Link href={link.href} className="hover:text-primary transition-colors">{link.name}</Link>
                 </li>
               ))}
             </ul>
@@ -74,7 +74,7 @@ const Footer = () => {
             <ul className="flex flex-col gap-4 text-sm font-medium">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-[#ccff00] transition-colors">{link.name}</Link>
+                  <Link href={link.href} className="hover:text-primary transition-colors">{link.name}</Link>
                 </li>
               ))}
             </ul>
@@ -88,11 +88,11 @@ const Footer = () => {
               <input 
                 type="email" 
                 placeholder="EMAIL ADDRESS" 
-                className="w-full bg-transparent border-b border-white/20 py-3 text-xs focus:outline-none focus:border-[#ccff00] transition-colors font-bold tracking-widest uppercase placeholder:text-white/20"
+                className="w-full bg-transparent border-b border-white/20 py-3 text-xs focus:outline-none focus:border-primary transition-colors font-bold tracking-widest uppercase placeholder:text-white/20"
               />
               <button 
                 type="submit" 
-                className="absolute right-0 bottom-3 text-[10px] font-black uppercase tracking-widest hover:text-[#ccff00] transition-colors"
+                className="absolute right-0 bottom-3 text-[10px] font-black uppercase tracking-widest hover:text-primary transition-colors"
               >
                 JOIN
               </button>

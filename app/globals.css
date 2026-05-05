@@ -8,6 +8,8 @@
   --color-accent-soft-blue: #85A1FF;
   --color-background-light: #f7f8f6;
   --color-background-dark: #000000;
+  --color-void: #0A0A0A;
+  --color-charcoal: #171717;
   --color-card-dark: #111111;
   --color-border-dark: #222222;
 
@@ -16,6 +18,15 @@
   --radius-default: 1rem;
   --radius-lg: 2rem;
   --radius-xl: 3rem;
+  --radius-liquid: 100px;
+  --radius-glass: 32px;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  --animate-float: float 6s ease-in-out infinite;
 }
 
 :root {
